@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: agent why did he appear here.ma
-//Last modified: Mon, Sep 29, 2025 03:25:30 PM
+//Last modified: Mon, Sep 29, 2025 03:59:58 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,20 +11,20 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "F5526BD1-4F86-5D84-C4F9-2598164254F6";
+fileInfo "UUID" "1839B91D-4105-DAB8-168A-2FAA0503C8D7";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "7EA6D6AE-46BB-826B-10E7-4CACFE2845FC";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 13.204496921255974 9.8943997642904318 -6.2336645413372098 ;
-	setAttr ".r" -type "double3" 356.66164727259604 4066.1999999984628 0 ;
+	setAttr ".t" -type "double3" 0.70468551986391859 -10.861357753053811 -26.876324400194797 ;
+	setAttr ".r" -type "double3" 393.86164727350456 3768.1999999992349 0 ;
 	setAttr ".rp" -type "double3" -2.0529435269737086e-15 2.5546506711085165e-16 0 ;
 	setAttr ".rpt" -type "double3" 3.4032540976072534e-15 -1.3828752602587168e-17 1.5485841209967804e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "949A5F3A-4269-BE13-FAF3-67A11D155B34";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 18.704669701460194;
+	setAttr ".coi" 31.570376518738048;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
