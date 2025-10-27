@@ -1,26 +1,36 @@
-//Maya ASCII 2026 scene
+//Maya ASCII 2025ff03 scene
 //Name: interior thingy.ma
-//Last modified: Mon, Sep 15, 2025 11:33:49 PM
+//Last modified: Mon, Oct 27, 2025 03:52:37 PM
 //Codeset: 1252
-requires maya "2026";
-requires "mtoa" "5.5.3";
+file -rdi 1 -ns "sofa_made_by_me" -rfn "sofa_made_by_meRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/11057086/Documents/GitHub/Essentials23/DAGV1100and1200/Maya//scenes/sofa made by me.ma";
+file -rdi 1 -ns "agent_why_did_he_appear_here" -rfn "agent_why_did_he_appear_hereRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/11057086/Documents/GitHub/Essentials23/DAGV1100and1200/Maya//scenes/agent why did he appear here.ma";
+file -r -ns "sofa_made_by_me" -dr 1 -rfn "sofa_made_by_meRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/11057086/Documents/GitHub/Essentials23/DAGV1100and1200/Maya//scenes/sofa made by me.ma";
+file -r -ns "agent_why_did_he_appear_here" -dr 1 -rfn "agent_why_did_he_appear_hereRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/11057086/Documents/GitHub/Essentials23/DAGV1100and1200/Maya//scenes/agent why did he appear here.ma";
+requires maya "2025ff03";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
+		 "mtoa" "5.4.5";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
-fileInfo "product" "Maya 2026";
-fileInfo "version" "2026";
-fileInfo "cutIdentifier" "202507081222-4d6919b75c";
-fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "87FE45A2-4182-9AD6-D16A-B787EFA55001";
+fileInfo "product" "Maya 2025";
+fileInfo "version" "2025";
+fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
+fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
+fileInfo "UUID" "DF58B33B-4B0A-01BA-961D-759449AE2E9C";
+fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "AE1CE307-44AA-592F-E4DE-C18BDCEDD9F9";
-	setAttr ".t" -type "double3" -22.747450253687838 6.9738666038283839 -11.508246527137967 ;
-	setAttr ".r" -type "double3" -7.2000000007798821 9960.0000000003893 0 ;
+	setAttr ".t" -type "double3" -11.770640516365756 6.1274121911767025 -11.483364837755886 ;
+	setAttr ".r" -type "double3" -7.7999999999991081 11044.000000000982 0 ;
 	setAttr ".rpt" -type "double3" 1.4041355874401991e-17 7.9815793946461027e-17 8.8058171142108262e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9D829E97-466E-A454-6B17-DEB4801EC63B";
 	setAttr -k off ".v";
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 26.475258374691403;
+	setAttr ".coi" 21.356356318111338;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -75,20 +85,24 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -n "fl_floor";
 	rename -uid "12BF3B9C-422B-D59B-1D51-D4A6F1CF2784";
+	setAttr ".t" -type "double3" 0 0 4.1821641440240942 ;
 createNode mesh -n "fl_floorShape" -p "fl_floor";
 	rename -uid "3858E43F-4795-65B7-31A2-10931B439636";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.375 ;
+	setAttr ".pv" -type "double2" 0.5 0.625 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 4 ".pt[4:7]" -type "float3"  0 0 -12.000976 0 0 -12.000976 
+		0 0 -12.000976 0 0 -12.000976;
 	setAttr ".dnp" yes;
 createNode transform -n "tbl_table";
 	rename -uid "CC106F0D-4CE0-7BE6-BC50-2EA2AA64030D";
+	setAttr ".t" -type "double3" 0 0 4.1821641440240942 ;
 	setAttr ".rp" -type "double3" -2.7241011536362185 2.4140556189193565 3.127867165905315 ;
 	setAttr ".sp" -type "double3" -2.7241011536362185 2.4140556189193565 3.127867165905315 ;
 createNode mesh -n "tbl_tableShape" -p "tbl_table";
@@ -894,6 +908,7 @@ createNode mesh -n "tbl_tableShape" -p "tbl_table";
 	setAttr ".dnp" yes;
 createNode transform -n "chr_chair";
 	rename -uid "A13C88BE-466E-1193-61EC-45BDDB9DBE40";
+	setAttr ".t" -type "double3" 0 0 4.1821641440240942 ;
 	setAttr ".rp" -type "double3" -2.7241011536362185 2.0096567562735803 -0.39213958397767357 ;
 	setAttr ".sp" -type "double3" -2.7241011536362185 2.0096567562735803 -0.39213958397767357 ;
 createNode mesh -n "chr_chairShape" -p "chr_chair";
@@ -1523,6 +1538,7 @@ createNode mesh -n "chr_chairShape" -p "chr_chair";
 	setAttr ".dnp" yes;
 createNode transform -n "w_wall";
 	rename -uid "D2AAC608-4379-B811-E1A1-958C39C68B08";
+	setAttr ".t" -type "double3" 0 0 4.1821641440240942 ;
 	setAttr ".rp" -type "double3" -6.375 -0.089999973773956299 8 ;
 	setAttr ".sp" -type "double3" -6.375 -0.089999973773956299 8 ;
 createNode mesh -n "w_wallShape" -p "w_wall";
@@ -1599,6 +1615,7 @@ createNode mesh -n "w_wallShape" -p "w_wall";
 	setAttr ".dnp" yes;
 createNode transform -n "w_wall2";
 	rename -uid "0D4D6275-420C-AEE2-AEB7-E1B171C7FD74";
+	setAttr ".t" -type "double3" 0 0 4.1821641440240942 ;
 	setAttr ".rp" -type "double3" 6.375 -0.089999973773956299 8 ;
 	setAttr ".sp" -type "double3" 6.375 -0.089999973773956299 8 ;
 createNode mesh -n "w_wallShape2" -p "w_wall2";
@@ -1619,7 +1636,7 @@ createNode mesh -n "w_wallShape2" -p "w_wall2";
 	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
 	setAttr ".gtag[5].gtagnm" -type "string" "top";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 2 "f[1]" "f[6:13]";
-	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr ".pv" -type "double2" 0.75 0.25 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 22 ".uvst[0].uvsp[0:21]" -type "float2" 0.375 0 0.625 0 0.375
 		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
@@ -1630,9 +1647,10 @@ createNode mesh -n "w_wallShape2" -p "w_wall2";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr -s 16 ".pt[0:15]" -type "float3"  12.75 0 8 5.3290705e-15 0 
-		-4.75 12.75 0 8 5.3290705e-15 0 -4.75 12.25 0 8.5 -0.5 0 -4.25 12.25 0 8.5 -0.5 0 
-		-4.25 12.75 0 8 5.3290705e-15 0 -4.75 -0.39355469 0 -4.3564453 12.356445 0 8.3935547 
-		12.75 0 8 5.3290705e-15 0 -4.75 -0.39355469 0 -4.3564453 12.356445 0 8.3935547;
+		-16.750971 12.75 0 8 5.3290705e-15 0 -16.750971 12.25 0 8.5 -0.5 0 -16.250975 12.25 
+		0 8.5 -0.5 0 -16.250975 12.75 0 8 5.3290705e-15 0 -16.750971 -0.39355469 0 -16.357416 
+		12.356445 0 8.3935547 12.75 0 8 5.3290705e-15 0 -16.750971 -0.39355469 0 -16.357416 
+		12.356445 0 8.3935547;
 	setAttr -s 16 ".vt[0:15]"  -6.375 -0.089999974 0 6.375 -0.089999974 0
 		 -6.375 0.28301466 0 6.375 0.28301466 0 -6.375 0.28301466 -0.5 6.375 0.28301466 -0.5
 		 -6.375 -0.089999974 -0.5 6.375 -0.089999974 -0.5 -6.375 0.40127337 0 6.375 0.40127337 0
@@ -1677,7 +1695,7 @@ createNode mesh -n "w_wallShape2" -p "w_wall2";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook1";
 	rename -uid "49A7BECC-42E7-29C4-29D6-8BAA01A8F44F";
-	setAttr ".t" -type "double3" 4.5617124588347062 5.3314323934737642 -3.5506331064745051 ;
+	setAttr ".t" -type "double3" 4.5617124588347062 5.3314323934737642 0.63153103754958906 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape1" -p "bk_tbook1";
@@ -2042,7 +2060,7 @@ createNode mesh -n "polySurfaceShape2" -p "bk_tbook1";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook2";
 	rename -uid "24F5DC45-400E-107D-0C5B-0096DA7C0919";
-	setAttr ".t" -type "double3" 4.5617124588347053 5.3314323934737642 -3.3622913686386871 ;
+	setAttr ".t" -type "double3" 4.5617124588347053 5.3314323934737642 0.81987277538540715 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape2" -p "bk_tbook2";
@@ -2204,7 +2222,7 @@ createNode mesh -n "bk_tbookShape2" -p "bk_tbook2";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook3";
 	rename -uid "DE3136C2-4FA8-DF26-0F69-C59D0EB1BC4E";
-	setAttr ".t" -type "double3" 4.5617124588347053 5.3582257496264845 -2.9225062057707474 ;
+	setAttr ".t" -type "double3" 4.5617124588347053 5.3582257496264845 1.2596579382533468 ;
 	setAttr ".r" -type "double3" 14.999999999999982 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 	setAttr ".rp" -type "double3" 0 -0.52499966947474075 0 ;
@@ -2524,7 +2542,7 @@ createNode mesh -n "polySurfaceShape2" -p "bk_tbook3";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook4";
 	rename -uid "6C1808EE-462A-D7E2-364E-F2A432EA55C2";
-	setAttr ".t" -type "double3" 4.5617124588347071 5.3314323934737642 -2.7526907113120904 ;
+	setAttr ".t" -type "double3" 4.5617124588347071 5.3314323934737642 1.4294734327120038 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape4" -p "bk_tbook4";
@@ -3047,7 +3065,7 @@ createNode mesh -n "polySurfaceShape4" -p "bk_tbook4";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook5";
 	rename -uid "FB0A17E1-4DC8-258F-D2DE-1980908B9219";
-	setAttr ".t" -type "double3" 4.5617124588347062 5.3314323934737642 -2.5643489734762723 ;
+	setAttr ".t" -type "double3" 4.5617124588347062 5.3314323934737642 1.6178151705478219 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape5" -p "bk_tbook5";
@@ -3325,7 +3343,7 @@ createNode mesh -n "polySurfaceShape2" -p "bk_tbook5";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_mbook";
 	rename -uid "AF41CCDD-4682-B360-271F-50836E51DDDB";
-	setAttr ".t" -type "double3" 4.5617124588347062 3.2358447969324149 -2.5783288188910198 ;
+	setAttr ".t" -type "double3" 4.5617124588347062 3.2358447969324149 1.6038353251330744 ;
 	setAttr ".r" -type "double3" 89.999999999999815 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 	setAttr ".rp" -type "double3" 0 -0.52499966947474075 0 ;
@@ -3803,6 +3821,7 @@ createNode mesh -n "polySurfaceShape3" -p "bk_mbook";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_bookcase";
 	rename -uid "226745F6-4BE8-94B5-ED97-79B78F4CC902";
+	setAttr ".t" -type "double3" 0 0 4.1821641440240942 ;
 	setAttr ".rp" -type "double3" 4.5636806488037109 3.4339124698754433 -0.92902490247443836 ;
 	setAttr ".sp" -type "double3" 4.5636806488037109 3.4339124698754433 -0.92902490247443836 ;
 createNode mesh -n "bk_bookcaseShape" -p "bk_bookcase";
@@ -4181,7 +4200,7 @@ createNode mesh -n "bk_bookcaseShape" -p "bk_bookcase";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook6";
 	rename -uid "E783DBFD-497A-62E3-B9CC-60A4E3F860FB";
-	setAttr ".t" -type "double3" 4.5617124588347071 5.3314323934737642 -2.3695138334388619 ;
+	setAttr ".t" -type "double3" 4.5617124588347071 5.3314323934737642 1.8126503105852323 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 	setAttr ".rp" -type "double3" 0 -0.52499966947474075 0 ;
@@ -4659,7 +4678,7 @@ createNode mesh -n "polySurfaceShape3" -p "bk_tbook6";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook7";
 	rename -uid "301C9B6C-4433-4C41-8EED-89B487229CE2";
-	setAttr ".t" -type "double3" 4.5617124588347071 5.3314323934737642 -1.9792930914291897 ;
+	setAttr ".t" -type "double3" 4.5617124588347071 5.3314323934737642 2.2028710525949045 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape7" -p "bk_tbook7";
@@ -4937,7 +4956,7 @@ createNode mesh -n "polySurfaceShape2" -p "bk_tbook7";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook8";
 	rename -uid "05A13B2A-49D8-1754-FFD6-B998E5E5644B";
-	setAttr ".t" -type "double3" 4.561712458834708 5.3314323934737642 -2.1676348292650078 ;
+	setAttr ".t" -type "double3" 4.561712458834708 5.3314323934737642 2.0145293147590864 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape8" -p "bk_tbook8";
@@ -5460,7 +5479,7 @@ createNode mesh -n "polySurfaceShape4" -p "bk_tbook8";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook9";
 	rename -uid "91A8D8F4-414C-7716-D4C8-56BBECB1F838";
-	setAttr ".t" -type "double3" 4.561712458834708 5.3314323934737642 -1.7844579513917791 ;
+	setAttr ".t" -type "double3" 4.561712458834708 5.3314323934737642 2.3977061926323149 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 	setAttr ".rp" -type "double3" 0 -0.52499966947474075 0 ;
@@ -5938,7 +5957,7 @@ createNode mesh -n "polySurfaceShape3" -p "bk_tbook9";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook10";
 	rename -uid "A7ABC27F-469B-F34B-7C67-CFB9A801C7B5";
-	setAttr ".t" -type "double3" 4.561712458834708 5.3314323934737642 -1.3792434003282588 ;
+	setAttr ".t" -type "double3" 4.561712458834708 5.3314323934737642 2.8029207436958354 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape10" -p "bk_tbook10";
@@ -6216,7 +6235,7 @@ createNode mesh -n "polySurfaceShape2" -p "bk_tbook10";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook11";
 	rename -uid "C4A15E4E-4D79-60B2-DD7F-59976B348B39";
-	setAttr ".t" -type "double3" 4.5617124588347089 5.3314323934737642 -1.5675851381640771 ;
+	setAttr ".t" -type "double3" 4.5617124588347089 5.3314323934737642 2.6145790058600173 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape11" -p "bk_tbook11";
@@ -6739,7 +6758,7 @@ createNode mesh -n "polySurfaceShape4" -p "bk_tbook11";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook12";
 	rename -uid "ABDEE879-4AB5-1BCC-49E3-6AB625D9DEC0";
-	setAttr ".t" -type "double3" 4.5617124588347089 5.3314323934737642 -1.1844082602908481 ;
+	setAttr ".t" -type "double3" 4.5617124588347089 5.3314323934737642 2.9977558837332463 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 	setAttr ".rp" -type "double3" 0 -0.52499966947474075 0 ;
@@ -7217,7 +7236,7 @@ createNode mesh -n "polySurfaceShape3" -p "bk_tbook12";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook13";
 	rename -uid "040DD5BD-4269-0A0C-204D-B1A162E603C3";
-	setAttr ".t" -type "double3" 4.5617124588347098 5.3314323934737651 -0.64052412057482788 ;
+	setAttr ".t" -type "double3" 4.5617124588347098 5.3314323934737651 3.5416400234492662 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape13" -p "bk_tbook13";
@@ -7495,7 +7514,7 @@ createNode mesh -n "polySurfaceShape2" -p "bk_tbook13";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook14";
 	rename -uid "2A999208-4A39-AD59-E186-C6B890FEF49C";
-	setAttr ".t" -type "double3" 4.5617124588347098 5.3388364937821633 -0.91266031292172234 ;
+	setAttr ".t" -type "double3" 4.5617124588347098 5.3388364937821633 3.2695038311023721 ;
 	setAttr ".r" -type "double3" -8.0084316739813577 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape14" -p "bk_tbook14";
@@ -8018,7 +8037,7 @@ createNode mesh -n "polySurfaceShape4" -p "bk_tbook14";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook15";
 	rename -uid "EF6B75B9-4605-2D20-66D6-75A4BACAA156";
-	setAttr ".t" -type "double3" 4.5617124588347107 5.3314323934737651 -0.44568898053741735 ;
+	setAttr ".t" -type "double3" 4.5617124588347107 5.3314323934737651 3.7364751634866771 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 	setAttr ".rp" -type "double3" 0 -0.52499966947474075 0 ;
@@ -8496,7 +8515,7 @@ createNode mesh -n "polySurfaceShape3" -p "bk_tbook15";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook16";
 	rename -uid "E19B55F0-4B85-9167-62F6-E8B67703B957";
-	setAttr ".t" -type "double3" 4.5617124588347107 5.3314323934737633 0.15631571689488366 ;
+	setAttr ".t" -type "double3" 4.5617124588347107 5.3314323934737633 4.3384798609189783 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 	setAttr ".rp" -type "double3" 0 -0.52499966947474075 0 ;
@@ -8974,7 +8993,7 @@ createNode mesh -n "polySurfaceShape3" -p "bk_tbook16";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook17";
 	rename -uid "319F9038-4C5F-D33B-9142-61BF77A97281";
-	setAttr ".t" -type "double3" 4.5617124588347107 5.3314323934737633 -0.2268611609783453 ;
+	setAttr ".t" -type "double3" 4.5617124588347107 5.3314323934737633 3.9553029830457489 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape17" -p "bk_tbook17";
@@ -9497,7 +9516,7 @@ createNode mesh -n "polySurfaceShape4" -p "bk_tbook17";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook18";
 	rename -uid "3019BD9C-4970-70D7-E9BF-C9AE91D91C5F";
-	setAttr ".t" -type "double3" 4.5617124588347098 5.3314323934737633 -0.038519423142526987 ;
+	setAttr ".t" -type "double3" 4.5617124588347098 5.3314323934737633 4.143644720881567 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape18" -p "bk_tbook18";
@@ -9775,7 +9794,7 @@ createNode mesh -n "polySurfaceShape2" -p "bk_tbook18";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook19";
 	rename -uid "4A2FCE52-4F66-0E48-0639-8686EF163800";
-	setAttr ".t" -type "double3" 4.5617124588347115 5.3314323934737633 0.77286580191523557 ;
+	setAttr ".t" -type "double3" 4.5617124588347115 5.3314323934737633 4.9550299459393292 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 	setAttr ".rp" -type "double3" 0 -0.52499966947474075 0 ;
@@ -10253,7 +10272,7 @@ createNode mesh -n "polySurfaceShape3" -p "bk_tbook19";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook20";
 	rename -uid "395FA173-426F-95B8-329A-868C944C0D27";
-	setAttr ".t" -type "double3" 4.5617124588347115 5.3314323934737633 0.38968892404200628 ;
+	setAttr ".t" -type "double3" 4.5617124588347115 5.3314323934737633 4.5718530680661003 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape20" -p "bk_tbook20";
@@ -10776,7 +10795,7 @@ createNode mesh -n "polySurfaceShape4" -p "bk_tbook20";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook21";
 	rename -uid "12078233-499D-F9D9-CE91-2DB76D892BC6";
-	setAttr ".t" -type "double3" 4.5617124588347107 5.3314323934737633 0.57803066187782459 ;
+	setAttr ".t" -type "double3" 4.5617124588347107 5.3314323934737633 4.7601948059019188 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape21" -p "bk_tbook21";
@@ -11054,7 +11073,7 @@ createNode mesh -n "polySurfaceShape2" -p "bk_tbook21";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook22";
 	rename -uid "EB6E4F7A-48C5-3CA9-D827-62B572ADD77C";
-	setAttr ".t" -type "double3" 4.5617124588347124 5.3314323934737633 1.4134042886329017 ;
+	setAttr ".t" -type "double3" 4.5617124588347124 5.3314323934737633 5.5955684326569957 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 	setAttr ".rp" -type "double3" 0 -0.52499966947474075 0 ;
@@ -11532,7 +11551,7 @@ createNode mesh -n "polySurfaceShape3" -p "bk_tbook22";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook23";
 	rename -uid "5EAFAE47-4C72-B6BE-4441-6AADECB8C82C";
-	setAttr ".t" -type "double3" 4.5617124588347124 5.3314323934737633 1.0302274107596721 ;
+	setAttr ".t" -type "double3" 4.5617124588347124 5.3314323934737633 5.2123915547837658 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape23" -p "bk_tbook23";
@@ -12055,7 +12074,7 @@ createNode mesh -n "polySurfaceShape4" -p "bk_tbook23";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tbook24";
 	rename -uid "EFDA86FB-41C4-C109-4ADA-AC87317161A7";
-	setAttr ".t" -type "double3" 4.5617124588347115 5.3314323934737633 1.2185691485954904 ;
+	setAttr ".t" -type "double3" 4.5617124588347115 5.3314323934737633 5.4007332926195843 ;
 	setAttr ".r" -type "double3" 0 -179.99999999999989 0 ;
 	setAttr ".s" -type "double3" 0.67150840610633511 1 0.16119834945613187 ;
 createNode mesh -n "bk_tbookShape24" -p "bk_tbook24";
@@ -12333,6 +12352,7 @@ createNode mesh -n "polySurfaceShape2" -p "bk_tbook24";
 	setAttr ".dnp" yes;
 createNode transform -n "bk_tblbook1";
 	rename -uid "D17AE74A-442C-48F9-A447-33A041E76E15";
+	setAttr ".t" -type "double3" 0 0 4.1821641440240942 ;
 	setAttr ".rp" -type "double3" -3.2884128579086758 2.6198646320187327 2.8227279121913575 ;
 	setAttr ".sp" -type "double3" -3.2884128579086758 2.6198646320187327 2.8227279121913575 ;
 createNode mesh -n "bk_tblbookShape1" -p "bk_tblbook1";
@@ -12938,6 +12958,7 @@ createNode mesh -n "lmp_baseShape" -p "transform3";
 	setAttr ".dnp" yes;
 createNode transform -n "lmp_lamp";
 	rename -uid "8D117E86-42FA-DA19-FFD4-FC8E24630C2F";
+	setAttr ".t" -type "double3" 0 0 4.1821641440240942 ;
 	setAttr ".rp" -type "double3" 3.2789102626869431 3.2816806663705633 5.1669285420610862 ;
 	setAttr ".sp" -type "double3" 3.2789102626869431 3.2816806663705633 5.1669285420610862 ;
 createNode mesh -n "lmp_lampShape" -p "lmp_lamp";
@@ -12952,21 +12973,606 @@ createNode mesh -n "lmp_lampShape" -p "lmp_lamp";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".dnp" yes;
+createNode transform -n "sofa_made_by_me:sofabase3";
+	rename -uid "FFB55370-4768-F999-9233-A2A20240DBB5";
+	setAttr ".t" -type "double3" 4.6827114111000423 -2.2675395624621011 -5.140809450316314 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".s" -type "double3" 0.39964909551527794 0.39964909551527794 0.39964909551527794 ;
+	setAttr ".rp" -type "double3" -0.43467903137207031 3.9430112838745117 0 ;
+	setAttr ".rpt" -type "double3" 1.0547118733938987e-15 0 3.3306690738754696e-16 ;
+	setAttr ".sp" -type "double3" -0.43467903137207031 3.9430112838745117 0 ;
+createNode mesh -n "sofa_made_by_me:sofabaseShape" -p "sofa_made_by_me:sofabase3";
+	rename -uid "D81C99A5-41B2-55AD-52EB-57A9842F7659";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "DB54624C-4FF1-8868-FE0A-2687DF3C1D0C";
+	setAttr ".t" -type "double3" 9.9268758918185949 1.623691860304973 0 ;
+	setAttr ".r" -type "double3" 0 153.06389841790568 0 ;
+	setAttr ".s" -type "double3" 0.28151099276911251 0.28151099276911251 0.28151099276911251 ;
+	setAttr ".rp" -type "double3" -2.7100272961423748 5.9866876446722408 0.29425124868609442 ;
+	setAttr ".rpt" -type "double3" 4.7961634663806763e-14 0 -6.9944050551384862e-15 ;
+	setAttr ".sp" -type "double3" -2.7100272961423748 5.9866876446722408 0.29425124868609442 ;
+createNode transform -n "polySurface1" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "414DA58A-4615-B020-8AF3-A1B1635BF2A7";
+createNode transform -n "transform27" -p "|agent_why_did_he_appear_here:pSphere15|polySurface1";
+	rename -uid "E478A4EB-4007-8113-B6C3-BFB1D8FD5961";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape5" -p "transform27";
+	rename -uid "75D8C38A-4921-8A96-C5CB-6D9A6AFC6774";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface2" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "AC9D7E8C-444B-62F8-75B7-538D32399D9D";
+createNode mesh -n "polySurfaceShape6" -p "polySurface2";
+	rename -uid "409AB824-4DE0-C0D2-111A-468ED68AE478";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface3" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "B2968CBA-4D43-B56F-50BC-A48917859870";
+createNode mesh -n "polySurfaceShape7" -p "polySurface3";
+	rename -uid "A38ECDE1-4213-1CF2-5C59-D9B4936A8595";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface4" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "E5C5FBDC-42D5-897D-3DC9-60B3E9272F5B";
+createNode transform -n "transform24" -p "polySurface4";
+	rename -uid "53CA5D30-4EA7-4B43-746D-84B1AD4E07DF";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape8" -p "transform24";
+	rename -uid "295499EA-463F-9374-FD12-349BFF4E1358";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface5" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "46DD7D72-4F33-4ED0-98BF-FB89CE25BDEB";
+createNode transform -n "transform25" -p "polySurface5";
+	rename -uid "F43A5FD4-40DA-EBCF-F1C4-7CB259E6C55E";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape9" -p "transform25";
+	rename -uid "9E8709D0-42FA-F653-9738-128B49364057";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface6" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "377E8B23-45DE-43FB-53B1-A1A3273AE5BB";
+createNode transform -n "transform26" -p "polySurface6";
+	rename -uid "9ED9CC4A-4370-8D4F-A9E5-BDB2CABBE5D3";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape10" -p "transform26";
+	rename -uid "F0FA0793-4DA1-36A1-C722-4186E784E1E0";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface7" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "7A41EB9A-4B25-B059-0F1E-ECBDA6A96CE9";
+createNode transform -n "transform23" -p "polySurface7";
+	rename -uid "5A56C9CB-46DD-9424-37D0-379451E83594";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape11" -p "transform23";
+	rename -uid "86DCDC19-4CCF-06F4-B224-B5A19019F048";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface8" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "7A8FC2C9-4851-353A-7350-619618667962";
+createNode transform -n "transform10" -p "polySurface8";
+	rename -uid "1AFA09F4-4DCD-8197-6759-A892F350DF51";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape12" -p "transform10";
+	rename -uid "FB15CD33-42C3-515C-2AF7-1996523F4B62";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface9" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "9D4ECB34-428C-E756-434F-59B919C4E153";
+createNode transform -n "transform8" -p "polySurface9";
+	rename -uid "610B8522-45FF-4F98-6321-D6A535B446A5";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape13" -p "transform8";
+	rename -uid "9614D99E-4EE3-5AC3-9B1A-6AB06AC43833";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface10" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "4B8B32A6-4887-D9C6-D89D-F1A405DDFFB4";
+createNode transform -n "transform14" -p "|agent_why_did_he_appear_here:pSphere15|polySurface10";
+	rename -uid "72C8EA75-4886-C0C9-2CFC-15BF8F5DD123";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape14" -p "transform14";
+	rename -uid "4BB02A4F-4E8B-01CC-02D2-6AA56140D12A";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface11" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "0938E88C-4072-EE47-FE77-659AA3C21AAC";
+createNode transform -n "transform13" -p "polySurface11";
+	rename -uid "52E6194A-480B-2573-1DC6-F7A4071F2CE8";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape15" -p "transform13";
+	rename -uid "14617600-4098-7729-6F46-10A2C6C777D5";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface12" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "97CC4E84-4ECD-2FB4-C7AD-5880871D2353";
+createNode transform -n "transform11" -p "polySurface12";
+	rename -uid "41378754-47A5-9A79-0A60-A98698F4E1AE";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape16" -p "transform11";
+	rename -uid "F3CD3BEB-4933-C831-DCA6-6D8815AC28B5";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface13" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "759CECC9-4B8A-89CE-F610-E381A769E5D5";
+createNode transform -n "transform9" -p "polySurface13";
+	rename -uid "36357BEA-41B6-1BA0-7D57-0FBB33B6913C";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape17" -p "transform9";
+	rename -uid "4B24FD87-43E1-A813-E27E-1E82D0F60C11";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface14" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "EF486C68-44C8-2DC5-4975-E6B68D10CF4E";
+createNode transform -n "transform12" -p "polySurface14";
+	rename -uid "188C7E70-49EB-8077-4407-D1BCE7170881";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape18" -p "transform12";
+	rename -uid "53D0394B-4C0F-D905-45FE-0CAF413D7071";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface15" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "CFE8B98C-4B0D-03BB-A005-4FA7DADBA173";
+createNode transform -n "transform15" -p "polySurface15";
+	rename -uid "A64FDC32-405A-97FD-5E8A-02926B05A9FC";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape19" -p "transform15";
+	rename -uid "F50D200B-4DB1-5CB6-E272-63914CA799FD";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface16" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "5C7518BD-415E-91B4-6551-808C9AA8874D";
+createNode transform -n "transform17" -p "polySurface16";
+	rename -uid "A1FB4ADA-4A8E-23EA-DB46-C5B5E97BAF9E";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape20" -p "transform17";
+	rename -uid "90BFB225-45C9-693D-9D4E-13A9BE8D1BAC";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface17" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "7FBF2F36-4D47-C1BA-6E69-03A83745DFF5";
+createNode transform -n "transform21" -p "|agent_why_did_he_appear_here:pSphere15|polySurface17";
+	rename -uid "EE514D17-4C80-1408-5592-02B524403C03";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape21" -p "transform21";
+	rename -uid "F87D6B8E-4FAB-92C3-D8F1-F996F9F44615";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface18" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "33025169-441B-CF50-3603-6FA6868BBD53";
+createNode transform -n "transform20" -p "polySurface18";
+	rename -uid "EB638653-4D16-53C2-C650-C68FED1F9AE8";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape22" -p "transform20";
+	rename -uid "B7A9BE7D-4C36-55EE-9059-3A97E71D1EDD";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface19" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "E7F2497E-4553-ABC2-C567-5492D52C9D5C";
+createNode transform -n "transform16" -p "polySurface19";
+	rename -uid "0F59B661-4739-973F-38A2-3F84BDCCA81C";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape23" -p "transform16";
+	rename -uid "5AF75E9E-4B6D-FF9C-43FC-E386EC5046CB";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface20" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "20DC67FA-4934-3E18-13AD-518D3513A0CE";
+createNode transform -n "transform19" -p "polySurface20";
+	rename -uid "875D99A2-45D3-6798-D118-EB971D2D9863";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape24" -p "transform19";
+	rename -uid "FA0216A5-4670-2F9A-CA10-E1BE82B31593";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface21" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "2BCD0C7D-4820-68A2-AD72-7B8C67F165FF";
+createNode transform -n "transform18" -p "polySurface21";
+	rename -uid "403A02BC-43AE-F9E9-BED6-82AFD664B486";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape25" -p "transform18";
+	rename -uid "75BFEF7B-4E05-D1F6-C5D6-C385B50A77D3";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface22" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "E65A46DB-45C3-1FC4-E1ED-F0BCEA2F50DB";
+createNode mesh -n "polySurfaceShape26" -p "polySurface22";
+	rename -uid "D5AD197E-4A61-374D-AFC8-F1AB37F3B745";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface23" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "4619D916-4A4E-DC81-D62C-9795C0B3C3DA";
+createNode mesh -n "polySurfaceShape27" -p "polySurface23";
+	rename -uid "01C14CEA-4C30-6A55-978B-FAA32C35A0F1";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface24" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "11F88DAD-4BBA-6957-2C86-A3A370E12C8A";
+createNode mesh -n "polySurfaceShape28" -p "polySurface24";
+	rename -uid "2E96854F-4DF4-A487-F994-2687269E0C83";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface25" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "90518BCB-4886-F9BD-D925-56A0141BF4F1";
+createNode transform -n "transform22" -p "polySurface25";
+	rename -uid "6DCF0841-446E-E7CE-F900-469E3BEF4848";
+	setAttr ".v" no;
+createNode mesh -n "polySurfaceShape29" -p "transform22";
+	rename -uid "6AA34E88-4320-804D-1ED1-F5A254FA4F96";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "transform7" -p "agent_why_did_he_appear_here:pSphere15";
+	rename -uid "C164308E-45E8-9F56-0EA1-6E8BA27D3563";
+	setAttr ".v" no;
+createNode mesh -n "agent_why_did_he_appear_here:pSphere1Shape" -p "transform7";
+	rename -uid "86EBF97F-45AC-FC6C-7D3E-1D85DCA4099D";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 4 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface10";
+	rename -uid "EB85DAE8-491A-5E40-EDFF-47BA8E6DB0BE";
+	setAttr ".t" -type "double3" -0.71713323190514533 0.65760749122774431 -0.28244785608338618 ;
+	setAttr ".r" -type "double3" 0 -55.0600821433421 -87.0646784675302 ;
+	setAttr ".rp" -type "double3" 7.0683316552175564 6.7612827792960264 1.1369537594258619 ;
+	setAttr ".rpt" -type "double3" -3.3112401709445294e-14 3.5527136788005009e-15 -7.1054273576010019e-15 ;
+	setAttr ".sp" -type "double3" 7.0683316552175564 6.7612827792960264 1.1369537594258619 ;
+createNode mesh -n "polySurface10Shape" -p "|polySurface10";
+	rename -uid "9F34A6D7-4DB9-3E28-FA64-018D43EF4A60";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface17";
+	rename -uid "E48B5580-4198-4BD1-A9E7-5C9C50392BDC";
+	setAttr ".t" -type "double3" -1.4218286952903005 0.74141452018714293 -0.21474543840574367 ;
+	setAttr ".r" -type "double3" -258.05399884951635 49.364885452736395 -336.96304340987808 ;
+	setAttr ".rp" -type "double3" 7.7461590728098857 6.7612827792960264 -0.3584489701323092 ;
+	setAttr ".rpt" -type "double3" 3.5527136788005009e-15 -4.4408920985006262e-14 -2.3314683517128287e-14 ;
+	setAttr ".sp" -type "double3" 7.7461590728098857 6.7612827792960264 -0.3584489701323092 ;
+createNode mesh -n "polySurface17Shape" -p "|polySurface17";
+	rename -uid "2041BC23-42A9-546B-618D-71A1B4E3DF92";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "polySurface1";
+	rename -uid "2DDEAD0E-4001-6922-774B-28A3D5E40B34";
+	setAttr ".r" -type "double3" -2.0492926146915025 -1.2711438624335831 13.522592663729773 ;
+	setAttr ".rp" -type "double3" 7.2202844375132225 8.5421761810893262 0.38891237172527993 ;
+	setAttr ".rpt" -type "double3" -2.6645352591003757e-15 5.9063864910058328e-14 5.5511151231257827e-17 ;
+	setAttr ".sp" -type "double3" 7.2202844375132225 8.5421761810893262 0.38891237172527993 ;
+createNode mesh -n "polySurface1Shape" -p "|polySurface1";
+	rename -uid "B2BCEFD4-4D59-E11A-2EB7-2C9FC631CEB7";
+	setAttr -k off ".v";
+	setAttr -s 4 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode fosterParent -n "sofa_made_by_meRNfosterParent1";
+	rename -uid "1B5188EA-4AF6-C2D7-0505-C99C5838B80F";
+createNode transform -n "sofa_made_by_me:transform1" -p "sofa_made_by_meRNfosterParent1";
+	rename -uid "AA9D7EAB-41B7-936E-DAFD-5DA356B143D5";
+	setAttr ".v" no;
+createNode transform -n "sofa_made_by_me:transform2" -p "sofa_made_by_meRNfosterParent1";
+	rename -uid "D9C18F20-4708-E994-747D-909E4DBE1540";
+	setAttr ".v" no;
+createNode transform -n "sofa_made_by_me:transform3" -p "sofa_made_by_meRNfosterParent1";
+	rename -uid "7C2C24E3-4683-568D-D2DC-89B090C98292";
+	setAttr ".v" no;
+createNode transform -n "sofa_made_by_me:transform4" -p "sofa_made_by_meRNfosterParent1";
+	rename -uid "0D752A2A-4FB9-C989-89CC-E8BE9437C144";
+	setAttr ".v" no;
+createNode transform -n "sofa_made_by_me:transform5" -p "sofa_made_by_meRNfosterParent1";
+	rename -uid "289B1738-49AA-55B2-0357-519834C1207B";
+	setAttr ".v" no;
+createNode transform -n "sofa_made_by_me:transform6" -p "sofa_made_by_meRNfosterParent1";
+	rename -uid "EC7F6CB7-4ED2-0F1C-9E29-D6B5A2A93FB7";
+	setAttr ".v" no;
+createNode transform -n "sofa_made_by_me:transform7" -p "sofa_made_by_meRNfosterParent1";
+	rename -uid "327C552E-406A-73F9-B171-D7BFFC8DA911";
+	setAttr ".v" no;
+createNode transform -n "sofa_made_by_me:transform8" -p "sofa_made_by_meRNfosterParent1";
+	rename -uid "C56E37D3-4934-9598-D09B-3FA1907ACE72";
+	setAttr ".v" no;
+createNode fosterParent -n "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "C146434D-4128-4A38-E2B5-10AF2643059A";
+createNode transform -n "agent_why_did_he_appear_here:transform9" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "2C2683F0-40C5-FA7D-2140-FCB43D5C0C83";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform10" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "A75E3691-4BE0-8628-F67F-E28F73B1EE34";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform11" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "5B1ADA5D-4288-1F3C-8EBE-9EBAA2F8AFDB";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform12" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "BD5B6DC8-4B74-38C8-8AF3-489E2228B915";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform13" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "77082A2F-4ABD-61D8-228F-0BACFF77DD0E";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform14" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "D67FBC65-43B4-4B5E-F8A5-B890BA999AFE";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform15" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "D11B4B7C-4234-D852-2AA5-F5BD5A10A4CD";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform16" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "B03F994A-4D98-0331-C354-DABE7256FBDC";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform17" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "11AB5C04-4492-5A64-71F5-E4B4BF01C70A";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform18" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "7B8C4632-4B60-6045-E5BC-7BA1A3AA27FF";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform19" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "7817FAAF-4B3F-F195-C40E-E9BC41C696FB";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform20" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "4EB950AB-49A1-3D8B-71F0-0D8C90E3F666";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform21" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "9944026E-4BDC-7B96-B91D-3E83312CEC4B";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform22" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "ED3D5AED-4538-1C28-DBF7-3698230C7250";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform23" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "4F679BD5-4F5F-6E42-13BF-A884EBBBD601";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform24" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "5118A1D5-483F-1B40-A7CA-F79660B5E089";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform25" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "D9D9A493-4812-D3CC-5852-AFA89395C433";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform26" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "87522290-44B9-313D-7766-31B386B59B47";
+	setAttr ".v" no;
+createNode transform -n "agent_why_did_he_appear_here:transform27" -p "agent_why_did_he_appear_hereRNfosterParent1";
+	rename -uid "96A367F6-4912-4161-6672-8FA2D0BAF3C8";
+	setAttr ".v" no;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "B338DDF6-468E-F19A-AD4D-DAB890B7B0B9";
-	setAttr -s 2 ".lnk";
-	setAttr -s 2 ".slnk";
+	rename -uid "956EC617-4674-2883-5CBA-CAA852DA8235";
+	setAttr -s 3 ".lnk";
+	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "D90FD9C0-485F-A4E0-F073-99AB56CC02F4";
+	rename -uid "B359C51C-418D-50B0-9D3E-E2BC348E281B";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "459FAB32-4D32-244E-1093-23AE482F1E46";
+	rename -uid "535DD908-43C7-7D65-0BA3-0294F00D5BD7";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "60D307B6-4F8B-9C39-2565-51A4EDF1DD8E";
+	rename -uid "8C4646D2-4FFF-D99F-1BF0-CBB367CCA882";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "6288DD7F-4252-E2B3-DD6B-C2B45968E6C0";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "6B71C401-40B8-5924-C51D-2192FECE17A6";
+	rename -uid "39A464B8-49D5-82FF-6DEB-1B98EFCBDA4F";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "CFFC624C-4660-048D-28D9-39B6A53204FF";
 	setAttr ".g" yes;
@@ -12976,17 +13582,17 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 555\n            -height 330\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n"
 		+ "            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
 		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n"
-		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
+		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 555\n            -height 329\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
 		+ "            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n"
 		+ "            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n"
-		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
-		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
+		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 555\n            -height 329\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n"
+		+ "        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1117\n            -height 714\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1117\n            -height 706\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n"
@@ -13009,8 +13615,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1117\\n    -height 714\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1117\\n    -height 714\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1117\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1117\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -13216,6 +13822,1187 @@ createNode transformGeometry -n "transformGeometry1";
 	rename -uid "4EFA3BBE-49F0-CEAC-859F-4F8CB244CD2C";
 	setAttr ".txf" -type "matrix" 12.75 0 0 0 0 0.17999999999999999 0 0 0 0 12.75 0
 		 0 0 0 1;
+createNode aiOptions -s -n "defaultArnoldRenderOptions";
+	rename -uid "04F6F370-468D-B742-F9CC-7A961BC0FC65";
+	setAttr ".version" -type "string" "5.4.5";
+createNode aiAOVFilter -s -n "defaultArnoldFilter";
+	rename -uid "EE473E44-4F42-EC28-6655-518E9C006B03";
+	setAttr ".ai_translator" -type "string" "gaussian";
+createNode aiAOVDriver -s -n "defaultArnoldDriver";
+	rename -uid "E8BBFA35-45E7-1E9D-4234-DE91FA4378BB";
+	setAttr ".ai_translator" -type "string" "exr";
+createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
+	rename -uid "2BBC1A05-4F65-9E7D-3A94-968F2B182CB4";
+	setAttr ".ai_translator" -type "string" "maya";
+	setAttr ".output_mode" 0;
+createNode aiImagerDenoiserOidn -s -n "defaultArnoldDenoiser";
+	rename -uid "C75606E7-4BB9-2C26-3AEC-9A8FCCFF6AD3";
+createNode reference -n "sofa_made_by_meRN";
+	rename -uid "9820B069-4962-003D-4C0A-5CA8865AD586";
+	setAttr -s 31 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sofa_made_by_meRN"
+		"sofa_made_by_meRN" 0
+		"sofa_made_by_meRN" 69
+		0 "|sofa_made_by_me:sofabaseShape" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform8" 
+		"-s -r "
+		0 "|sofa_made_by_me:sofabaseShape2" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform7" 
+		"-s -r "
+		0 "|sofa_made_by_me:cushionLShape" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6" 
+		"-s -r "
+		0 "|sofa_made_by_me:cushionMShape" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5" 
+		"-s -r "
+		0 "|sofa_made_by_me:cushionRShape" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4" 
+		"-s -r "
+		0 "|sofa_made_by_me:pillowLTShape" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform3" 
+		"-s -r "
+		0 "|sofa_made_by_me:pillowMTShape" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform2" 
+		"-s -r "
+		0 "|sofa_made_by_me:pillowSSShape" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform1" 
+		"-s -r "
+		0 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform8" "|sofa_made_by_me:sofabase" 
+		"-s -r "
+		0 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform7" "|sofa_made_by_me:sofabase2" 
+		"-s -r "
+		0 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6" "|sofa_made_by_me:cushionL" 
+		"-s -r "
+		0 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5" "|sofa_made_by_me:cushionM" 
+		"-s -r "
+		0 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4" "|sofa_made_by_me:cushionR" 
+		"-s -r "
+		0 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform3" "|sofa_made_by_me:pillowLT" 
+		"-s -r "
+		0 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform2" "|sofa_made_by_me:pillowMT" 
+		"-s -r "
+		0 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform1" "|sofa_made_by_me:pillowSS" 
+		"-s -r "
+		2 "|sofa_made_by_me:sofabase" "scale" " -type \"double3\" 1 1 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform8|sofa_made_by_me:sofabaseShape" 
+		"intermediateObject" " 1"
+		2 "|sofa_made_by_me:sofabase2" "scale" " -type \"double3\" 1 1 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform7|sofa_made_by_me:sofabaseShape2" 
+		"intermediateObject" " 1"
+		2 "|sofa_made_by_me:cushionL" "scale" " -type \"double3\" 1 1 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6|sofa_made_by_me:cushionLShape" 
+		"intermediateObject" " 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6|sofa_made_by_me:cushionLShape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:97]\""
+		
+		2 "|sofa_made_by_me:cushionM" "scale" " -type \"double3\" 1 1 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5|sofa_made_by_me:cushionMShape" 
+		"intermediateObject" " 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5|sofa_made_by_me:cushionMShape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:97]\""
+		
+		2 "|sofa_made_by_me:cushionR" "scale" " -type \"double3\" 1 1 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4|sofa_made_by_me:cushionRShape" 
+		"intermediateObject" " 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4|sofa_made_by_me:cushionRShape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:97]\""
+		
+		2 "|sofa_made_by_me:pillowLT" "scale" " -type \"double3\" 1 1 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform3|sofa_made_by_me:pillowLTShape" 
+		"intermediateObject" " 1"
+		2 "|sofa_made_by_me:pillowMT" "scale" " -type \"double3\" 1 1 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform2|sofa_made_by_me:pillowMTShape" 
+		"intermediateObject" " 1"
+		2 "|sofa_made_by_me:pillowSS" "scale" " -type \"double3\" 1 1 1"
+		2 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform1|sofa_made_by_me:pillowSSShape" 
+		"intermediateObject" " 1"
+		3 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4|sofa_made_by_me:cushionRShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6|sofa_made_by_me:cushionLShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5|sofa_made_by_me:cushionMShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform1|sofa_made_by_me:pillowSSShape.outMesh" 
+		"sofa_made_by_meRN.placeHolderList[1]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform1|sofa_made_by_me:pillowSSShape.worldMatrix" 
+		"sofa_made_by_meRN.placeHolderList[2]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform2|sofa_made_by_me:pillowMTShape.outMesh" 
+		"sofa_made_by_meRN.placeHolderList[3]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform2|sofa_made_by_me:pillowMTShape.worldMatrix" 
+		"sofa_made_by_meRN.placeHolderList[4]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform3|sofa_made_by_me:pillowLTShape.outMesh" 
+		"sofa_made_by_meRN.placeHolderList[5]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform3|sofa_made_by_me:pillowLTShape.worldMatrix" 
+		"sofa_made_by_meRN.placeHolderList[6]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4|sofa_made_by_me:cushionRShape.instObjGroups.objectGroups[0]" 
+		"sofa_made_by_meRN.placeHolderList[7]" ""
+		5 4 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4|sofa_made_by_me:cushionRShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"sofa_made_by_meRN.placeHolderList[8]" ""
+		5 4 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4|sofa_made_by_me:cushionRShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"sofa_made_by_meRN.placeHolderList[9]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4|sofa_made_by_me:cushionRShape.outMesh" 
+		"sofa_made_by_meRN.placeHolderList[10]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4|sofa_made_by_me:cushionRShape.worldMatrix" 
+		"sofa_made_by_meRN.placeHolderList[11]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4|sofa_made_by_me:cushionRShape.compInstObjGroups.compObjectGroups[0]" 
+		"sofa_made_by_meRN.placeHolderList[12]" ""
+		5 4 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform4|sofa_made_by_me:cushionRShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"sofa_made_by_meRN.placeHolderList[13]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5|sofa_made_by_me:cushionMShape.instObjGroups.objectGroups[0]" 
+		"sofa_made_by_meRN.placeHolderList[14]" ""
+		5 4 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5|sofa_made_by_me:cushionMShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"sofa_made_by_meRN.placeHolderList[15]" ""
+		5 4 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5|sofa_made_by_me:cushionMShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"sofa_made_by_meRN.placeHolderList[16]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5|sofa_made_by_me:cushionMShape.outMesh" 
+		"sofa_made_by_meRN.placeHolderList[17]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5|sofa_made_by_me:cushionMShape.worldMatrix" 
+		"sofa_made_by_meRN.placeHolderList[18]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5|sofa_made_by_me:cushionMShape.compInstObjGroups.compObjectGroups[0]" 
+		"sofa_made_by_meRN.placeHolderList[19]" ""
+		5 4 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform5|sofa_made_by_me:cushionMShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"sofa_made_by_meRN.placeHolderList[20]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6|sofa_made_by_me:cushionLShape.instObjGroups.objectGroups[0]" 
+		"sofa_made_by_meRN.placeHolderList[21]" ""
+		5 4 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6|sofa_made_by_me:cushionLShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"sofa_made_by_meRN.placeHolderList[22]" ""
+		5 4 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6|sofa_made_by_me:cushionLShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"sofa_made_by_meRN.placeHolderList[23]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6|sofa_made_by_me:cushionLShape.outMesh" 
+		"sofa_made_by_meRN.placeHolderList[24]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6|sofa_made_by_me:cushionLShape.worldMatrix" 
+		"sofa_made_by_meRN.placeHolderList[25]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6|sofa_made_by_me:cushionLShape.compInstObjGroups.compObjectGroups[0]" 
+		"sofa_made_by_meRN.placeHolderList[26]" ""
+		5 4 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform6|sofa_made_by_me:cushionLShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"sofa_made_by_meRN.placeHolderList[27]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform7|sofa_made_by_me:sofabaseShape2.outMesh" 
+		"sofa_made_by_meRN.placeHolderList[28]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform7|sofa_made_by_me:sofabaseShape2.worldMatrix" 
+		"sofa_made_by_meRN.placeHolderList[29]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform8|sofa_made_by_me:sofabaseShape.outMesh" 
+		"sofa_made_by_meRN.placeHolderList[30]" ""
+		5 3 "sofa_made_by_meRN" "|sofa_made_by_meRNfosterParent1|sofa_made_by_me:transform8|sofa_made_by_me:sofabaseShape.worldMatrix" 
+		"sofa_made_by_meRN.placeHolderList[31]" "";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode polyUnite -n "polyUnite3";
+	rename -uid "BFC1CEAD-4662-BD55-C0C0-9389C96DA047";
+	setAttr -s 8 ".ip";
+	setAttr -s 8 ".im";
+createNode groupId -n "sofa_made_by_me:groupId15";
+	rename -uid "884EAD53-4661-328B-9984-99AD0EE42C47";
+	setAttr ".ihi" 0;
+createNode groupId -n "sofa_made_by_me:groupId16";
+	rename -uid "060ADEFD-4811-BBA9-72F0-26989E4939DC";
+	setAttr ".ihi" 0;
+createNode groupId -n "sofa_made_by_me:groupId17";
+	rename -uid "69B69AE6-4E08-78C1-B7BB-7FB338AC90E6";
+	setAttr ".ihi" 0;
+createNode groupId -n "sofa_made_by_me:groupId18";
+	rename -uid "C25FE59C-4D07-771A-87D1-56B3DFAFD867";
+	setAttr ".ihi" 0;
+createNode groupId -n "sofa_made_by_me:groupId19";
+	rename -uid "224E90DE-4AA8-D288-4F6D-8C858D1373A4";
+	setAttr ".ihi" 0;
+createNode groupId -n "sofa_made_by_me:groupId20";
+	rename -uid "22C5CB9D-4B95-B8A4-38C1-FFAC08AD3DA5";
+	setAttr ".ihi" 0;
+createNode groupId -n "sofa_made_by_me:groupId21";
+	rename -uid "D980EFD5-4FE7-EDC0-7815-8095176C1C07";
+	setAttr ".ihi" 0;
+createNode groupParts -n "sofa_made_by_me:groupParts1";
+	rename -uid "26B3B758-4502-B5CF-B851-459810A43430";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:1148]";
+createNode groupId -n "sofa_made_by_me:groupId22";
+	rename -uid "B68528D7-498A-934D-F7DB-3EB2D4306660";
+	setAttr ".ihi" 0;
+createNode reference -n "agent_why_did_he_appear_hereRN";
+	rename -uid "97752C62-4426-C7C0-EA20-9EB615AE6E48";
+	setAttr -s 137 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
+	setAttr ".phl[89]" 0;
+	setAttr ".phl[90]" 0;
+	setAttr ".phl[91]" 0;
+	setAttr ".phl[92]" 0;
+	setAttr ".phl[93]" 0;
+	setAttr ".phl[94]" 0;
+	setAttr ".phl[95]" 0;
+	setAttr ".phl[96]" 0;
+	setAttr ".phl[97]" 0;
+	setAttr ".phl[98]" 0;
+	setAttr ".phl[99]" 0;
+	setAttr ".phl[100]" 0;
+	setAttr ".phl[101]" 0;
+	setAttr ".phl[102]" 0;
+	setAttr ".phl[103]" 0;
+	setAttr ".phl[104]" 0;
+	setAttr ".phl[105]" 0;
+	setAttr ".phl[106]" 0;
+	setAttr ".phl[107]" 0;
+	setAttr ".phl[108]" 0;
+	setAttr ".phl[109]" 0;
+	setAttr ".phl[110]" 0;
+	setAttr ".phl[111]" 0;
+	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
+	setAttr ".phl[114]" 0;
+	setAttr ".phl[115]" 0;
+	setAttr ".phl[116]" 0;
+	setAttr ".phl[117]" 0;
+	setAttr ".phl[118]" 0;
+	setAttr ".phl[119]" 0;
+	setAttr ".phl[120]" 0;
+	setAttr ".phl[121]" 0;
+	setAttr ".phl[122]" 0;
+	setAttr ".phl[123]" 0;
+	setAttr ".phl[124]" 0;
+	setAttr ".phl[125]" 0;
+	setAttr ".phl[126]" 0;
+	setAttr ".phl[127]" 0;
+	setAttr ".phl[128]" 0;
+	setAttr ".phl[129]" 0;
+	setAttr ".phl[130]" 0;
+	setAttr ".phl[131]" 0;
+	setAttr ".phl[132]" 0;
+	setAttr ".phl[133]" 0;
+	setAttr ".phl[134]" 0;
+	setAttr ".phl[135]" 0;
+	setAttr ".phl[136]" 0;
+	setAttr ".phl[137]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"agent_why_did_he_appear_hereRN"
+		"agent_why_did_he_appear_hereRN" 0
+		"agent_why_did_he_appear_hereRN" 221
+		0 "|agent_why_did_he_appear_here:pSphereShape1" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pSphereShape2" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pSphereShape3" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pCubeShape2" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pCubeShape3" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pCubeShape4" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pCubeShape5" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pSphere12Shape" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform20" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:polySurfaceShape1" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform19" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:polySurfaceShape2" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform18" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:polySurfaceShape3" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform17" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:polySurfaceShape4" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform16" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:polySurfaceShape5" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform15" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:polySurfaceShape6" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform14" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:polySurfaceShape7" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform13" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pCylinderShape1" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pSphereShape12" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pCubeShape6" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_here:pCubeShape7" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27" 
+		"|agent_why_did_he_appear_here:pSphere1" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26" 
+		"|agent_why_did_he_appear_here:pSphere2" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25" 
+		"|agent_why_did_he_appear_here:pSphere3" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24" 
+		"|agent_why_did_he_appear_here:pCube2" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23" 
+		"|agent_why_did_he_appear_here:pCube3" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22" 
+		"|agent_why_did_he_appear_here:pCube4" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21" 
+		"|agent_why_did_he_appear_here:pCube5" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform20" 
+		"|agent_why_did_he_appear_here:pSphere12" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform19" 
+		"|agent_why_did_he_appear_here:pSphere13|agent_why_did_he_appear_here:polySurface1" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform18" 
+		"|agent_why_did_he_appear_here:pSphere13|agent_why_did_he_appear_here:polySurface2" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform17" 
+		"|agent_why_did_he_appear_here:pSphere13|agent_why_did_he_appear_here:polySurface3" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform16" 
+		"|agent_why_did_he_appear_here:pSphere13|agent_why_did_he_appear_here:polySurface4" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform15" 
+		"|agent_why_did_he_appear_here:pSphere13|agent_why_did_he_appear_here:polySurface5" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform14" 
+		"|agent_why_did_he_appear_here:pSphere13|agent_why_did_he_appear_here:polySurface6" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform13" 
+		"|agent_why_did_he_appear_here:pSphere13|agent_why_did_he_appear_here:polySurface7" 
+		"-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12" 
+		"|agent_why_did_he_appear_here:pCylinder1" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11" 
+		"|agent_why_did_he_appear_here:pSphere14" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10" 
+		"|agent_why_did_he_appear_here:pCube6" "-s -r "
+		0 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9" 
+		"|agent_why_did_he_appear_here:pCube7" "-s -r "
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25|agent_why_did_he_appear_here:pSphereShape3" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25|agent_why_did_he_appear_here:pSphereShape3" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:399]\""
+		
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23|agent_why_did_he_appear_here:pCubeShape3" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23|agent_why_did_he_appear_here:pCubeShape3" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:5]\""
+		
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21|agent_why_did_he_appear_here:pCubeShape5" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21|agent_why_did_he_appear_here:pCubeShape5" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:15]\""
+		
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform20|agent_why_did_he_appear_here:pSphere12Shape" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform19|agent_why_did_he_appear_here:polySurfaceShape1" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform18|agent_why_did_he_appear_here:polySurfaceShape2" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform17|agent_why_did_he_appear_here:polySurfaceShape3" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform16|agent_why_did_he_appear_here:polySurfaceShape4" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform15|agent_why_did_he_appear_here:polySurfaceShape5" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform14|agent_why_did_he_appear_here:polySurfaceShape6" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform13|agent_why_did_he_appear_here:polySurfaceShape7" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9|agent_why_did_he_appear_here:pCubeShape7" 
+		"intermediateObject" " 1"
+		2 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9|agent_why_did_he_appear_here:pCubeShape7" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:5]\""
+		
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "agent_why_did_he_appear_here:polyCylinder1.output" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1.inMesh" 
+		""
+		3 "agent_why_did_he_appear_here:polySplit2.output" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4.inMesh" 
+		""
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23|agent_why_did_he_appear_here:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "agent_why_did_he_appear_here:polyCube2.output" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2.inMesh" 
+		""
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "agent_why_did_he_appear_here:polySplit3.output" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6.inMesh" 
+		""
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "agent_why_did_he_appear_here:polySphere1.output" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1.inMesh" 
+		""
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "agent_why_did_he_appear_here:polySphere4.output" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12.inMesh" 
+		""
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25|agent_why_did_he_appear_here:pSphereShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "agent_why_did_he_appear_here:polySphere2.output" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2.inMesh" 
+		""
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4.instObjGroups" 
+		"agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" "-na"
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21|agent_why_did_he_appear_here:pCubeShape5.instObjGroups" 
+		"agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" "-na"
+		3 "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9|agent_why_did_he_appear_here:pCubeShape7.instObjGroups" 
+		"agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" "-na"
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9|agent_why_did_he_appear_here:pCubeShape7.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[1]" ""
+		5 0 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.memberWireframeColor" 
+		"|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9|agent_why_did_he_appear_here:pCubeShape7.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[2]" "agent_why_did_he_appear_hereRN.placeHolderList[3]" 
+		""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9|agent_why_did_he_appear_here:pCubeShape7.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[4]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9|agent_why_did_he_appear_here:pCubeShape7.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[5]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9|agent_why_did_he_appear_here:pCubeShape7.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[6]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6.inMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[7]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[8]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[9]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[10]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[11]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[12]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[13]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform10|agent_why_did_he_appear_here:pCubeShape6.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[14]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12.inMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[15]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[16]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[17]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[18]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[19]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[20]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[21]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform11|agent_why_did_he_appear_here:pSphereShape12.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[22]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1.inMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[23]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[24]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[25]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[26]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[27]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[28]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[29]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform12|agent_why_did_he_appear_here:pCylinderShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[30]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform13|agent_why_did_he_appear_here:polySurfaceShape7.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[31]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform13|agent_why_did_he_appear_here:polySurfaceShape7.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[32]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform14|agent_why_did_he_appear_here:polySurfaceShape6.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[33]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform14|agent_why_did_he_appear_here:polySurfaceShape6.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[34]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform15|agent_why_did_he_appear_here:polySurfaceShape5.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[35]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform15|agent_why_did_he_appear_here:polySurfaceShape5.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[36]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform16|agent_why_did_he_appear_here:polySurfaceShape4.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[37]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform16|agent_why_did_he_appear_here:polySurfaceShape4.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[38]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform17|agent_why_did_he_appear_here:polySurfaceShape3.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[39]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform17|agent_why_did_he_appear_here:polySurfaceShape3.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[40]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform18|agent_why_did_he_appear_here:polySurfaceShape2.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[41]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform18|agent_why_did_he_appear_here:polySurfaceShape2.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[42]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform19|agent_why_did_he_appear_here:polySurfaceShape1.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[43]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform19|agent_why_did_he_appear_here:polySurfaceShape1.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[44]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform20|agent_why_did_he_appear_here:pSphere12Shape.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[45]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform20|agent_why_did_he_appear_here:pSphere12Shape.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[46]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21|agent_why_did_he_appear_here:pCubeShape5.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[47]" ""
+		5 0 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.memberWireframeColor" 
+		"|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21|agent_why_did_he_appear_here:pCubeShape5.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[48]" "agent_why_did_he_appear_hereRN.placeHolderList[49]" 
+		""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21|agent_why_did_he_appear_here:pCubeShape5.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[50]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21|agent_why_did_he_appear_here:pCubeShape5.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[51]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21|agent_why_did_he_appear_here:pCubeShape5.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[52]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4.inMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[53]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[54]" ""
+		5 0 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.memberWireframeColor" 
+		"|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[55]" "agent_why_did_he_appear_hereRN.placeHolderList[56]" 
+		""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[57]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[58]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[59]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23|agent_why_did_he_appear_here:pCubeShape3.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[60]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23|agent_why_did_he_appear_here:pCubeShape3.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[61]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23|agent_why_did_he_appear_here:pCubeShape3.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[62]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23|agent_why_did_he_appear_here:pCubeShape3.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[63]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23|agent_why_did_he_appear_here:pCubeShape3.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[64]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23|agent_why_did_he_appear_here:pCubeShape3.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[65]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform23|agent_why_did_he_appear_here:pCubeShape3.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[66]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2.inMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[67]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[68]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[69]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[70]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[71]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[72]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[73]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform24|agent_why_did_he_appear_here:pCubeShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[74]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25|agent_why_did_he_appear_here:pSphereShape3.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[75]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25|agent_why_did_he_appear_here:pSphereShape3.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[76]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25|agent_why_did_he_appear_here:pSphereShape3.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[77]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25|agent_why_did_he_appear_here:pSphereShape3.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[78]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25|agent_why_did_he_appear_here:pSphereShape3.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[79]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25|agent_why_did_he_appear_here:pSphereShape3.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[80]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform25|agent_why_did_he_appear_here:pSphereShape3.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[81]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2.inMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[82]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[83]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[84]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[85]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[86]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[87]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[88]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform26|agent_why_did_he_appear_here:pSphereShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[89]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1.inMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[90]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[91]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[92]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[93]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1.outMesh" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[94]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1.worldMatrix" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[95]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[96]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform27|agent_why_did_he_appear_here:pSphereShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[97]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:polySphere1.output" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[98]" "agent_why_did_he_appear_here:pSphereShape1.i"
+		
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:polySphere2.output" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[99]" "agent_why_did_he_appear_here:pSphereShape2.i"
+		
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:polyCube2.output" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[100]" "agent_why_did_he_appear_here:pCubeShape2.i"
+		
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:polySplit2.output" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[101]" "agent_why_did_he_appear_here:pCubeShape4.i"
+		
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:polyCylinder1.output" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[102]" "agent_why_did_he_appear_here:pCylinderShape1.i"
+		
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:polySphere4.output" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[103]" "agent_why_did_he_appear_here:pSphereShape12.i"
+		
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:polySplit3.output" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[104]" "agent_why_did_he_appear_here:pCubeShape6.i"
+		
+		5 0 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" "agent_why_did_he_appear_hereRN.placeHolderList[105]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[106]" ""
+		5 0 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform22|agent_why_did_he_appear_here:pCubeShape4.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" "agent_why_did_he_appear_hereRN.placeHolderList[107]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[108]" ""
+		5 0 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21|agent_why_did_he_appear_here:pCubeShape5.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" "agent_why_did_he_appear_hereRN.placeHolderList[109]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[110]" ""
+		5 0 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform21|agent_why_did_he_appear_here:pCubeShape5.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" "agent_why_did_he_appear_hereRN.placeHolderList[111]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[112]" ""
+		5 0 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9|agent_why_did_he_appear_here:pCubeShape7.instObjGroups.objectGroups[0]" 
+		"agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" "agent_why_did_he_appear_hereRN.placeHolderList[113]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[114]" ""
+		5 0 "agent_why_did_he_appear_hereRN" "|agent_why_did_he_appear_hereRNfosterParent1|agent_why_did_he_appear_here:transform9|agent_why_did_he_appear_here:pCubeShape7.compInstObjGroups.compObjectGroups[0]" 
+		"agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" "agent_why_did_he_appear_hereRN.placeHolderList[115]" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[116]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[117]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[118]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[119]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[120]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.dagSetMembers" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[121]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[122]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[123]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[124]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[125]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[126]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[127]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[128]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[129]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[130]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[131]" ""
+		5 4 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.groupNodes" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[132]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.memberWireframeColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[133]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.memberWireframeColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[134]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.memberWireframeColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[135]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.memberWireframeColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[136]" ""
+		5 3 "agent_why_did_he_appear_hereRN" "agent_why_did_he_appear_here:standardSurface2SG.memberWireframeColor" 
+		"agent_why_did_he_appear_hereRN.placeHolderList[137]" "";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode polyUnite -n "polyUnite4";
+	rename -uid "DA4BF332-4969-737B-9939-29B4BA5E93B8";
+	setAttr -s 19 ".ip";
+	setAttr -s 19 ".im";
+createNode groupId -n "agent_why_did_he_appear_here:groupId26";
+	rename -uid "655CE238-4813-30E0-34B1-ACBE4E45C3A9";
+	setAttr ".ihi" 0;
+createNode groupParts -n "agent_why_did_he_appear_here:groupParts10";
+	rename -uid "5F466206-40E7-0842-E03D-D7BC6292A0C5";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "agent_why_did_he_appear_here:groupId27";
+	rename -uid "F9940DBA-43AD-6240-169C-F0BF08F46CC7";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId28";
+	rename -uid "0E151774-4ED0-78CB-68A2-CA975D6DC7F3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "agent_why_did_he_appear_here:groupParts11";
+	rename -uid "286FDC24-4CC9-A566-341C-2F9F705A23BC";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "agent_why_did_he_appear_here:groupId29";
+	rename -uid "F130E192-4407-3098-0BD4-83B004F7886A";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId30";
+	rename -uid "DEE27BC1-431D-5197-A763-33A375860223";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId31";
+	rename -uid "1584F1E7-4C2F-D0A8-AD31-F9A519CED94F";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId32";
+	rename -uid "5A2A7B22-40CF-25FC-D6C1-6AA0198901D4";
+	setAttr ".ihi" 0;
+createNode groupParts -n "agent_why_did_he_appear_here:groupParts12";
+	rename -uid "975F18C1-4A7B-E6DB-8EAD-D2BA77CE82F1";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
+createNode groupId -n "agent_why_did_he_appear_here:groupId33";
+	rename -uid "9849ED47-40A2-74EB-0D3C-49A260D2543A";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId34";
+	rename -uid "251F0575-4990-B111-49C2-9F8ABE802C47";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId35";
+	rename -uid "660A3093-47C0-6A8D-CD0E-1C9ED6976FEE";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId36";
+	rename -uid "1D7A5D67-4F2F-4BE7-8583-D7BC61951EA9";
+	setAttr ".ihi" 0;
+createNode groupParts -n "agent_why_did_he_appear_here:groupParts13";
+	rename -uid "A414987D-4C81-BD69-E9BB-7FB5CAD1D098";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:15]";
+createNode groupId -n "agent_why_did_he_appear_here:groupId37";
+	rename -uid "F4E15C2E-4762-0440-640B-6788519626D4";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId38";
+	rename -uid "E8429822-4B57-4B23-0BD4-939855D40840";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId39";
+	rename -uid "08D53E23-453A-FD9F-D59F-D18CEC976122";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId40";
+	rename -uid "AA85FF08-44B1-4D9B-5FA0-E79FA030BB86";
+	setAttr ".ihi" 0;
+createNode groupParts -n "agent_why_did_he_appear_here:groupParts14";
+	rename -uid "41C8A3E1-4BBB-BF07-B012-47938BFEC377";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:59]";
+createNode groupId -n "agent_why_did_he_appear_here:groupId41";
+	rename -uid "35BED406-4420-358C-C3F8-7F825CF98D50";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId42";
+	rename -uid "F0F444B1-435A-9D76-4B18-4286AB7B3162";
+	setAttr ".ihi" 0;
+createNode groupParts -n "agent_why_did_he_appear_here:groupParts15";
+	rename -uid "53604EDA-4640-BCC8-D3A6-C0A395144B4E";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "agent_why_did_he_appear_here:groupId43";
+	rename -uid "B84523AA-4620-E046-0019-E59E092F9C24";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId44";
+	rename -uid "12DB07B3-4333-68FD-2468-C9A571E7D52E";
+	setAttr ".ihi" 0;
+createNode groupParts -n "agent_why_did_he_appear_here:groupParts16";
+	rename -uid "28DA72B2-4037-8037-7940-509961E651C6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:9]";
+createNode groupId -n "agent_why_did_he_appear_here:groupId45";
+	rename -uid "CAE0E9D9-4F89-C080-7E01-64831B29DDC5";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId46";
+	rename -uid "469C10D2-4F60-1841-B0D2-42A10A754B75";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId47";
+	rename -uid "D862E9B0-4300-1CB5-4FB9-61A1812C25C9";
+	setAttr ".ihi" 0;
+createNode groupId -n "agent_why_did_he_appear_here:groupId48";
+	rename -uid "273ED69C-4879-34E4-1A4F-1FB7DC012A80";
+	setAttr ".ihi" 0;
+createNode groupParts -n "agent_why_did_he_appear_here:groupParts17";
+	rename -uid "EF3313E7-4DA9-6143-F1DE-1990D257AF8E";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "f[0:1211]" "f[1244:7313]";
+createNode groupId -n "agent_why_did_he_appear_here:groupId49";
+	rename -uid "D820EFDC-482A-EF4D-E81E-40958E75D5EE";
+	setAttr ".ihi" 0;
+createNode groupParts -n "agent_why_did_he_appear_here:groupParts18";
+	rename -uid "A637D3E9-4D49-8428-B3C3-21AD746E6EF3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "f[1212:1243]" "f[7314:7319]";
+createNode groupId -n "agent_why_did_he_appear_here:groupId50";
+	rename -uid "E4E35FE3-4457-6122-6B2F-D48CE224BFA0";
+	setAttr ".ihi" 0;
+createNode polySeparate -n "polySeparate1";
+	rename -uid "18D2B083-49AD-21D7-AD94-F6BF9D0F9429";
+	setAttr ".ic" 25;
+	setAttr -s 25 ".out";
+createNode groupId -n "groupId24";
+	rename -uid "75881CE6-49D8-2089-5FCB-DA9F8C477F6B";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts7";
+	rename -uid "BA7FB7B8-4B8B-437E-AD25-279845214F7E";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId25";
+	rename -uid "3AF5958B-454F-88FA-F315-C591931A8EFF";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts8";
+	rename -uid "2397330E-4F9A-FCCB-6256-5F95F2910A25";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId26";
+	rename -uid "D2154D44-4914-6DF1-633D-95868BF27BD6";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts9";
+	rename -uid "63C88D24-4A8F-371C-1794-96B2A501FCE3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId27";
+	rename -uid "420821AE-4E9C-9B30-3F52-05BC3CD70800";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts10";
+	rename -uid "E426D965-4C5B-6916-67E0-0285B27FB937";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+createNode groupId -n "groupId28";
+	rename -uid "6DDB8FE2-4B6B-572C-5082-BA8B82D05C84";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts11";
+	rename -uid "50CCD7CF-4C3F-82B7-8315-ADA738C474EF";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+createNode groupId -n "groupId29";
+	rename -uid "2CC2AF6F-407F-79BD-CAF3-ADB591F3449D";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts12";
+	rename -uid "CE12E9C0-4EA1-A572-E3DF-EC971AD1A9EB";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 16 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]";
+createNode groupId -n "groupId30";
+	rename -uid "ABB15E45-43D6-0C4B-20CD-B28B090953EF";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts13";
+	rename -uid "1D93DB26-43D5-5505-B8D9-8A9B7CD0F06D";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 16 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]";
+createNode groupId -n "groupId31";
+	rename -uid "F2CAFE88-4B3D-A117-C799-DAA2B3017327";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts14";
+	rename -uid "64D34DEB-4719-72D3-7F01-D58B8807B514";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId32";
+	rename -uid "DD4F3B5D-497A-B0D2-8BA9-46903167B5BA";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts15";
+	rename -uid "5F6EB44F-4C4B-BB72-A76B-A985A164C47B";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId33";
+	rename -uid "E2A6A757-435E-B467-FF91-6C8D8F81E9A8";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts16";
+	rename -uid "A0B9B370-491A-44E3-02E1-04A474C94FC4";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId34";
+	rename -uid "E361327B-4D9B-34D3-329E-49846819BD2F";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts17";
+	rename -uid "F640D503-4A27-836D-9F2A-41BBC5CD2D23";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId35";
+	rename -uid "F5C3CC2F-405E-0B46-6967-4FB95986E0A7";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts18";
+	rename -uid "63204776-4010-E9EE-84E1-7FB7DE78EBC2";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId36";
+	rename -uid "F12B63BE-4667-8637-809C-79A275061CA7";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts19";
+	rename -uid "FD061181-4F8C-AB5E-A652-5EBB50306252";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId37";
+	rename -uid "9CCD9DDE-44FC-3C0D-AFAD-8294027A3654";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts20";
+	rename -uid "14C5AC40-45AC-B81E-6E96-2BB144C80AA7";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId38";
+	rename -uid "D2DFF957-41BB-E99D-CDB0-E5ABED3DE8EE";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts21";
+	rename -uid "986AB3D1-49D2-550E-A743-7D89DE017C65";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId39";
+	rename -uid "BF6B518E-46A6-9064-7482-DF8717B1CE1B";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts22";
+	rename -uid "1873264D-4C4E-7395-3F20-8CB529AF6F6E";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId40";
+	rename -uid "4119E890-4E04-DC1D-6E69-60B3ACAC5DC8";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts23";
+	rename -uid "43CB6FF8-49F7-838D-7FC8-50B5933A7AA1";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId41";
+	rename -uid "66524D20-498F-E65E-0DDE-CE96FAFD30B2";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts24";
+	rename -uid "E58A2F4E-41C1-995C-B770-41A2B2CBB20B";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId42";
+	rename -uid "DEF69FF5-435E-E1C4-0307-6D8B976CFAB4";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts25";
+	rename -uid "CC6FA67B-42AF-6E94-8894-B68DA26DD185";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId43";
+	rename -uid "E1C98082-4D84-52C4-D274-3F9CF5BA2F74";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts26";
+	rename -uid "9932F0BD-4419-69DE-EC0F-B09196640F96";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId44";
+	rename -uid "CD3B4179-4127-BE9C-6461-FD918C22A278";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts27";
+	rename -uid "6E8ED8FF-45BF-126B-A0FF-59AABE7D0D97";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId45";
+	rename -uid "F01A3696-4A16-AB2F-98FB-F484CC0C16D8";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts28";
+	rename -uid "2A3E8737-497B-A3AC-8213-299B1666F2BD";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 60 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]";
+createNode groupId -n "groupId46";
+	rename -uid "BCD9B272-4125-9853-8965-EABFACAE10F4";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts29";
+	rename -uid "E24BA103-4292-F5EB-08E0-D4A7562A3189";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 400 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]" "f[49]" "f[50]" "f[51]" "f[52]" "f[53]" "f[54]" "f[55]" "f[56]" "f[57]" "f[58]" "f[59]" "f[60]" "f[61]" "f[62]" "f[63]" "f[64]" "f[65]" "f[66]" "f[67]" "f[68]" "f[69]" "f[70]" "f[71]" "f[72]" "f[73]" "f[74]" "f[75]" "f[76]" "f[77]" "f[78]" "f[79]" "f[80]" "f[81]" "f[82]" "f[83]" "f[84]" "f[85]" "f[86]" "f[87]" "f[88]" "f[89]" "f[90]" "f[91]" "f[92]" "f[93]" "f[94]" "f[95]" "f[96]" "f[97]" "f[98]" "f[99]" "f[100]" "f[101]" "f[102]" "f[103]" "f[104]" "f[105]" "f[106]" "f[107]" "f[108]" "f[109]" "f[110]" "f[111]" "f[112]" "f[113]" "f[114]" "f[115]" "f[116]" "f[117]" "f[118]" "f[119]" "f[120]" "f[121]" "f[122]" "f[123]" "f[124]" "f[125]" "f[126]" "f[127]" "f[128]" "f[129]" "f[130]" "f[131]" "f[132]" "f[133]" "f[134]" "f[135]" "f[136]" "f[137]" "f[138]" "f[139]" "f[140]" "f[141]" "f[142]" "f[143]" "f[144]" "f[145]" "f[146]" "f[147]" "f[148]" "f[149]" "f[150]" "f[151]" "f[152]" "f[153]" "f[154]" "f[155]" "f[156]" "f[157]" "f[158]" "f[159]" "f[160]" "f[161]" "f[162]" "f[163]" "f[164]" "f[165]" "f[166]" "f[167]" "f[168]" "f[169]" "f[170]" "f[171]" "f[172]" "f[173]" "f[174]" "f[175]" "f[176]" "f[177]" "f[178]" "f[179]" "f[180]" "f[181]" "f[182]" "f[183]" "f[184]" "f[185]" "f[186]" "f[187]" "f[188]" "f[189]" "f[190]" "f[191]" "f[192]" "f[193]" "f[194]" "f[195]" "f[196]" "f[197]" "f[198]" "f[199]" "f[200]" "f[201]" "f[202]" "f[203]" "f[204]" "f[205]" "f[206]" "f[207]" "f[208]" "f[209]" "f[210]" "f[211]" "f[212]" "f[213]" "f[214]" "f[215]" "f[216]" "f[217]" "f[218]" "f[219]" "f[220]" "f[221]" "f[222]" "f[223]" "f[224]" "f[225]" "f[226]" "f[227]" "f[228]" "f[229]" "f[230]" "f[231]" "f[232]" "f[233]" "f[234]" "f[235]" "f[236]" "f[237]" "f[238]" "f[239]" "f[240]" "f[241]" "f[242]" "f[243]" "f[244]" "f[245]" "f[246]" "f[247]" "f[248]" "f[249]" "f[250]" "f[251]" "f[252]" "f[253]" "f[254]" "f[255]" "f[256]" "f[257]" "f[258]" "f[259]" "f[260]" "f[261]" "f[262]" "f[263]" "f[264]" "f[265]" "f[266]" "f[267]" "f[268]" "f[269]" "f[270]" "f[271]" "f[272]" "f[273]" "f[274]" "f[275]" "f[276]" "f[277]" "f[278]" "f[279]" "f[280]" "f[281]" "f[282]" "f[283]" "f[284]" "f[285]" "f[286]" "f[287]" "f[288]" "f[289]" "f[290]" "f[291]" "f[292]" "f[293]" "f[294]" "f[295]" "f[296]" "f[297]" "f[298]" "f[299]" "f[300]" "f[301]" "f[302]" "f[303]" "f[304]" "f[305]" "f[306]" "f[307]" "f[308]" "f[309]" "f[310]" "f[311]" "f[312]" "f[313]" "f[314]" "f[315]" "f[316]" "f[317]" "f[318]" "f[319]" "f[320]" "f[321]" "f[322]" "f[323]" "f[324]" "f[325]" "f[326]" "f[327]" "f[328]" "f[329]" "f[330]" "f[331]" "f[332]" "f[333]" "f[334]" "f[335]" "f[336]" "f[337]" "f[338]" "f[339]" "f[340]" "f[341]" "f[342]" "f[343]" "f[344]" "f[345]" "f[346]" "f[347]" "f[348]" "f[349]" "f[350]" "f[351]" "f[352]" "f[353]" "f[354]" "f[355]" "f[356]" "f[357]" "f[358]" "f[359]" "f[360]" "f[361]" "f[362]" "f[363]" "f[364]" "f[365]" "f[366]" "f[367]" "f[368]" "f[369]" "f[370]" "f[371]" "f[372]" "f[373]" "f[374]" "f[375]" "f[376]" "f[377]" "f[378]" "f[379]" "f[380]" "f[381]" "f[382]" "f[383]" "f[384]" "f[385]" "f[386]" "f[387]" "f[388]" "f[389]" "f[390]" "f[391]" "f[392]" "f[393]" "f[394]" "f[395]" "f[396]" "f[397]" "f[398]" "f[399]";
+createNode groupId -n "groupId47";
+	rename -uid "A602EDD8-4C45-FB24-9CFD-46AB64C24059";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts30";
+	rename -uid "33B39C84-4657-E3C5-EC6A-AB97EC70F08C";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 10 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]";
+createNode groupId -n "groupId48";
+	rename -uid "BC3B11C2-42DE-8FF1-A41E-A0BC69EFE4C3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts31";
+	rename -uid "52BEE9A5-4254-BC12-FB7D-5BB7A78A09E9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+createNode polyUnite -n "polyUnite5";
+	rename -uid "17B895C7-4C5C-4612-DCD8-918F0601C166";
+	setAttr -s 7 ".ip";
+	setAttr -s 7 ".im";
+createNode groupId -n "groupId49";
+	rename -uid "DDA5F026-4CBA-95EA-D333-999CEEC92599";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts32";
+	rename -uid "4B8E2075-453E-C834-858E-E7942E9FEB47";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:2799]";
+createNode groupId -n "groupId50";
+	rename -uid "4EDC2929-4C4E-1605-B553-AB9520469859";
+	setAttr ".ihi" 0;
+createNode polyUnite -n "polyUnite6";
+	rename -uid "4E4E7738-45F4-71FE-82DF-13B35116D9AA";
+	setAttr -s 7 ".ip";
+	setAttr -s 7 ".im";
+createNode groupId -n "groupId51";
+	rename -uid "30BF4D8B-4A7B-D1C0-B389-0981761A7880";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts33";
+	rename -uid "A72E5A13-4478-FCD9-F96E-EB9EA260F7CA";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:2799]";
+createNode groupId -n "groupId52";
+	rename -uid "E143E44D-4349-AFA8-EDFE-FA974DA6A6A4";
+	setAttr ".ihi" 0;
+createNode polyUnite -n "polyUnite7";
+	rename -uid "7B18B72B-438B-2B63-4ACA-16B494CBCF97";
+	setAttr -s 6 ".ip";
+	setAttr -s 6 ".im";
+createNode groupId -n "groupId53";
+	rename -uid "00B1912B-40A5-FA67-D2DB-3FA229198155";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts34";
+	rename -uid "513D9DA0-4152-E7AF-CCED-B1AD59245219";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "f[0:399]" "f[416:427]";
+createNode groupId -n "groupId54";
+	rename -uid "E0BE7141-4384-F2B7-A205-A980AFF9493A";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts35";
+	rename -uid "A23C9029-4E74-E39F-7F47-4A91EA75C679";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "f[400:415]" "f[428:449]";
+createNode groupId -n "groupId55";
+	rename -uid "51BB5720-4BC5-4D92-3FEA-9D90AAE6EC53";
+	setAttr ".ihi" 0;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -13227,29 +15014,29 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 2 ".st";
+	setAttr -s 3 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
 	setAttr -s 6 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
+	setAttr -s 3 ".r";
+select -ne :lambert1;
+	setAttr ".c" -type "float3" 0.17307693 0.17307693 0.17307693 ;
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
-select -ne :openPBR_shader1;
-	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
-	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 47 ".dsm";
+	setAttr -s 135 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 13 ".gn";
+	setAttr -s 94 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
-	setAttr ".dss" -type "string" "openPBR_shader1";
+	setAttr ".dss" -type "string" "lambert1";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
 select -ne :defaultColorMgtGlobals;
@@ -13266,6 +15053,243 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
+connectAttr "sofa_made_by_meRN.phl[1]" "polyUnite3.ip[7]";
+connectAttr "sofa_made_by_meRN.phl[2]" "polyUnite3.im[7]";
+connectAttr "sofa_made_by_meRN.phl[3]" "polyUnite3.ip[6]";
+connectAttr "sofa_made_by_meRN.phl[4]" "polyUnite3.im[6]";
+connectAttr "sofa_made_by_meRN.phl[5]" "polyUnite3.ip[5]";
+connectAttr "sofa_made_by_meRN.phl[6]" "polyUnite3.im[5]";
+connectAttr "sofa_made_by_meRN.phl[7]" ":initialShadingGroup.dsm" -na;
+connectAttr "sofa_made_by_me:groupId19.id" "sofa_made_by_meRN.phl[8]";
+connectAttr ":initialShadingGroup.mwc" "sofa_made_by_meRN.phl[9]";
+connectAttr "sofa_made_by_meRN.phl[10]" "polyUnite3.ip[4]";
+connectAttr "sofa_made_by_meRN.phl[11]" "polyUnite3.im[4]";
+connectAttr "sofa_made_by_meRN.phl[12]" ":initialShadingGroup.dsm" -na;
+connectAttr "sofa_made_by_me:groupId20.id" "sofa_made_by_meRN.phl[13]";
+connectAttr "sofa_made_by_meRN.phl[14]" ":initialShadingGroup.dsm" -na;
+connectAttr "sofa_made_by_me:groupId17.id" "sofa_made_by_meRN.phl[15]";
+connectAttr ":initialShadingGroup.mwc" "sofa_made_by_meRN.phl[16]";
+connectAttr "sofa_made_by_meRN.phl[17]" "polyUnite3.ip[3]";
+connectAttr "sofa_made_by_meRN.phl[18]" "polyUnite3.im[3]";
+connectAttr "sofa_made_by_meRN.phl[19]" ":initialShadingGroup.dsm" -na;
+connectAttr "sofa_made_by_me:groupId18.id" "sofa_made_by_meRN.phl[20]";
+connectAttr "sofa_made_by_meRN.phl[21]" ":initialShadingGroup.dsm" -na;
+connectAttr "sofa_made_by_me:groupId15.id" "sofa_made_by_meRN.phl[22]";
+connectAttr ":initialShadingGroup.mwc" "sofa_made_by_meRN.phl[23]";
+connectAttr "sofa_made_by_meRN.phl[24]" "polyUnite3.ip[2]";
+connectAttr "sofa_made_by_meRN.phl[25]" "polyUnite3.im[2]";
+connectAttr "sofa_made_by_meRN.phl[26]" ":initialShadingGroup.dsm" -na;
+connectAttr "sofa_made_by_me:groupId16.id" "sofa_made_by_meRN.phl[27]";
+connectAttr "sofa_made_by_meRN.phl[28]" "polyUnite3.ip[1]";
+connectAttr "sofa_made_by_meRN.phl[29]" "polyUnite3.im[1]";
+connectAttr "sofa_made_by_meRN.phl[30]" "polyUnite3.ip[0]";
+connectAttr "sofa_made_by_meRN.phl[31]" "polyUnite3.im[0]";
+connectAttr "agent_why_did_he_appear_here:groupId46.id" "agent_why_did_he_appear_hereRN.phl[1]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[2]" "agent_why_did_he_appear_hereRN.phl[3]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[4]" "polyUnite4.ip[18]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[5]" "polyUnite4.im[18]";
+connectAttr "agent_why_did_he_appear_here:groupId47.id" "agent_why_did_he_appear_hereRN.phl[6]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupParts16.og" "agent_why_did_he_appear_hereRN.phl[7]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[8]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "agent_why_did_he_appear_here:groupId44.id" "agent_why_did_he_appear_hereRN.phl[9]"
+		;
+connectAttr ":initialShadingGroup.mwc" "agent_why_did_he_appear_hereRN.phl[10]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[11]" "polyUnite4.ip[17]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[12]" "polyUnite4.im[17]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[13]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId45.id" "agent_why_did_he_appear_hereRN.phl[14]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupParts15.og" "agent_why_did_he_appear_hereRN.phl[15]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[16]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId42.id" "agent_why_did_he_appear_hereRN.phl[17]"
+		;
+connectAttr ":initialShadingGroup.mwc" "agent_why_did_he_appear_hereRN.phl[18]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[19]" "polyUnite4.ip[16]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[20]" "polyUnite4.im[16]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[21]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId43.id" "agent_why_did_he_appear_hereRN.phl[22]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupParts14.og" "agent_why_did_he_appear_hereRN.phl[23]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[24]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId40.id" "agent_why_did_he_appear_hereRN.phl[25]"
+		;
+connectAttr ":initialShadingGroup.mwc" "agent_why_did_he_appear_hereRN.phl[26]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[27]" "polyUnite4.ip[15]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[28]" "polyUnite4.im[15]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[29]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId41.id" "agent_why_did_he_appear_hereRN.phl[30]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[31]" "polyUnite4.ip[14]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[32]" "polyUnite4.im[14]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[33]" "polyUnite4.ip[13]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[34]" "polyUnite4.im[13]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[35]" "polyUnite4.ip[12]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[36]" "polyUnite4.im[12]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[37]" "polyUnite4.ip[11]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[38]" "polyUnite4.im[11]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[39]" "polyUnite4.ip[10]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[40]" "polyUnite4.im[10]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[41]" "polyUnite4.ip[9]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[42]" "polyUnite4.im[9]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[43]" "polyUnite4.ip[8]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[44]" "polyUnite4.im[8]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[45]" "polyUnite4.ip[7]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[46]" "polyUnite4.im[7]";
+connectAttr "agent_why_did_he_appear_here:groupId38.id" "agent_why_did_he_appear_hereRN.phl[47]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[48]" "agent_why_did_he_appear_hereRN.phl[49]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[50]" "polyUnite4.ip[6]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[51]" "polyUnite4.im[6]";
+connectAttr "agent_why_did_he_appear_here:groupId39.id" "agent_why_did_he_appear_hereRN.phl[52]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupParts13.og" "agent_why_did_he_appear_hereRN.phl[53]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId36.id" "agent_why_did_he_appear_hereRN.phl[54]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[55]" "agent_why_did_he_appear_hereRN.phl[56]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[57]" "polyUnite4.ip[5]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[58]" "polyUnite4.im[5]";
+connectAttr "agent_why_did_he_appear_here:groupId37.id" "agent_why_did_he_appear_hereRN.phl[59]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[60]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId34.id" "agent_why_did_he_appear_hereRN.phl[61]"
+		;
+connectAttr ":initialShadingGroup.mwc" "agent_why_did_he_appear_hereRN.phl[62]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[63]" "polyUnite4.ip[4]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[64]" "polyUnite4.im[4]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[65]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId35.id" "agent_why_did_he_appear_hereRN.phl[66]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupParts12.og" "agent_why_did_he_appear_hereRN.phl[67]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[68]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId32.id" "agent_why_did_he_appear_hereRN.phl[69]"
+		;
+connectAttr ":initialShadingGroup.mwc" "agent_why_did_he_appear_hereRN.phl[70]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[71]" "polyUnite4.ip[3]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[72]" "polyUnite4.im[3]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[73]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId33.id" "agent_why_did_he_appear_hereRN.phl[74]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[75]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId30.id" "agent_why_did_he_appear_hereRN.phl[76]"
+		;
+connectAttr ":initialShadingGroup.mwc" "agent_why_did_he_appear_hereRN.phl[77]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[78]" "polyUnite4.ip[2]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[79]" "polyUnite4.im[2]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[80]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId31.id" "agent_why_did_he_appear_hereRN.phl[81]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupParts11.og" "agent_why_did_he_appear_hereRN.phl[82]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[83]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId28.id" "agent_why_did_he_appear_hereRN.phl[84]"
+		;
+connectAttr ":initialShadingGroup.mwc" "agent_why_did_he_appear_hereRN.phl[85]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[86]" "polyUnite4.ip[1]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[87]" "polyUnite4.im[1]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[88]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId29.id" "agent_why_did_he_appear_hereRN.phl[89]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupParts10.og" "agent_why_did_he_appear_hereRN.phl[90]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[91]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId26.id" "agent_why_did_he_appear_hereRN.phl[92]"
+		;
+connectAttr ":initialShadingGroup.mwc" "agent_why_did_he_appear_hereRN.phl[93]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[94]" "polyUnite4.ip[0]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[95]" "polyUnite4.im[0]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[96]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "agent_why_did_he_appear_here:groupId27.id" "agent_why_did_he_appear_hereRN.phl[97]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[98]" "agent_why_did_he_appear_here:groupParts10.ig"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[99]" "agent_why_did_he_appear_here:groupParts11.ig"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[100]" "agent_why_did_he_appear_here:groupParts12.ig"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[101]" "agent_why_did_he_appear_here:groupParts13.ig"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[102]" "agent_why_did_he_appear_here:groupParts14.ig"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[103]" "agent_why_did_he_appear_here:groupParts15.ig"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[104]" "agent_why_did_he_appear_here:groupParts16.ig"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[105]" "agent_why_did_he_appear_hereRN.phl[106]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[107]" "agent_why_did_he_appear_hereRN.phl[108]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[109]" "agent_why_did_he_appear_hereRN.phl[110]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[111]" "agent_why_did_he_appear_hereRN.phl[112]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[113]" "agent_why_did_he_appear_hereRN.phl[114]"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[115]" "agent_why_did_he_appear_hereRN.phl[116]"
+		;
+connectAttr "agent_why_did_he_appear_here:pSphere1Shape.iog.og[1]" "agent_why_did_he_appear_hereRN.phl[117]"
+		;
+connectAttr "polySurfaceShape10.iog.og[0]" "agent_why_did_he_appear_hereRN.phl[118]"
+		;
+connectAttr "polySurfaceShape11.iog.og[0]" "agent_why_did_he_appear_hereRN.phl[119]"
+		;
+connectAttr "polySurfaceShape29.iog.og[0]" "agent_why_did_he_appear_hereRN.phl[120]"
+		;
+connectAttr "polySurface1Shape.iog.og[1]" "agent_why_did_he_appear_hereRN.phl[121]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId36.msg" "agent_why_did_he_appear_hereRN.phl[122]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId37.msg" "agent_why_did_he_appear_hereRN.phl[123]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId38.msg" "agent_why_did_he_appear_hereRN.phl[124]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId39.msg" "agent_why_did_he_appear_hereRN.phl[125]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId46.msg" "agent_why_did_he_appear_hereRN.phl[126]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId47.msg" "agent_why_did_he_appear_hereRN.phl[127]"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId49.msg" "agent_why_did_he_appear_hereRN.phl[128]"
+		;
+connectAttr "groupId29.msg" "agent_why_did_he_appear_hereRN.phl[129]";
+connectAttr "groupId30.msg" "agent_why_did_he_appear_hereRN.phl[130]";
+connectAttr "groupId48.msg" "agent_why_did_he_appear_hereRN.phl[131]";
+connectAttr "groupId54.msg" "agent_why_did_he_appear_hereRN.phl[132]";
+connectAttr "agent_why_did_he_appear_hereRN.phl[133]" "agent_why_did_he_appear_here:pSphere1Shape.iog.og[1].gco"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[134]" "polySurfaceShape10.iog.og[0].gco"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[135]" "polySurfaceShape11.iog.og[0].gco"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[136]" "polySurfaceShape29.iog.og[0].gco"
+		;
+connectAttr "agent_why_did_he_appear_hereRN.phl[137]" "polySurface1Shape.iog.og[1].gco"
+		;
 connectAttr "transformGeometry1.og" "fl_floorShape.i";
 connectAttr "groupId9.id" "bk_bookcaseShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "bk_bookcaseShape.iog.og[0].gco";
@@ -13299,6 +15323,109 @@ connectAttr "groupParts6.og" "|lmp_lamp|lmp_lampShape.i";
 connectAttr "groupId22.id" "|lmp_lamp|lmp_lampShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "|lmp_lamp|lmp_lampShape.iog.og[0].gco";
 connectAttr "groupId23.id" "|lmp_lamp|lmp_lampShape.ciog.cog[0].cgid";
+connectAttr "sofa_made_by_me:groupParts1.og" "|sofa_made_by_me:sofabase3|sofa_made_by_me:sofabaseShape.i"
+		;
+connectAttr "sofa_made_by_me:groupId21.id" "|sofa_made_by_me:sofabase3|sofa_made_by_me:sofabaseShape.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "|sofa_made_by_me:sofabase3|sofa_made_by_me:sofabaseShape.iog.og[0].gco"
+		;
+connectAttr "sofa_made_by_me:groupId22.id" "|sofa_made_by_me:sofabase3|sofa_made_by_me:sofabaseShape.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts7.og" "polySurfaceShape5.i";
+connectAttr "groupId24.id" "polySurfaceShape5.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape5.iog.og[0].gco";
+connectAttr "groupParts8.og" "polySurfaceShape6.i";
+connectAttr "groupId25.id" "polySurfaceShape6.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape6.iog.og[0].gco";
+connectAttr "groupParts9.og" "polySurfaceShape7.i";
+connectAttr "groupId26.id" "polySurfaceShape7.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape7.iog.og[0].gco";
+connectAttr "groupParts10.og" "polySurfaceShape8.i";
+connectAttr "groupId27.id" "polySurfaceShape8.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape8.iog.og[0].gco";
+connectAttr "groupParts11.og" "polySurfaceShape9.i";
+connectAttr "groupId28.id" "polySurfaceShape9.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape9.iog.og[0].gco";
+connectAttr "groupParts12.og" "polySurfaceShape10.i";
+connectAttr "groupId29.id" "polySurfaceShape10.iog.og[0].gid";
+connectAttr "groupParts13.og" "polySurfaceShape11.i";
+connectAttr "groupId30.id" "polySurfaceShape11.iog.og[0].gid";
+connectAttr "groupParts14.og" "polySurfaceShape12.i";
+connectAttr "groupId31.id" "polySurfaceShape12.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape12.iog.og[0].gco";
+connectAttr "groupParts15.og" "polySurfaceShape13.i";
+connectAttr "groupId32.id" "polySurfaceShape13.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape13.iog.og[0].gco";
+connectAttr "groupParts16.og" "polySurfaceShape14.i";
+connectAttr "groupId33.id" "polySurfaceShape14.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape14.iog.og[0].gco";
+connectAttr "groupParts17.og" "polySurfaceShape15.i";
+connectAttr "groupId34.id" "polySurfaceShape15.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape15.iog.og[0].gco";
+connectAttr "groupParts18.og" "polySurfaceShape16.i";
+connectAttr "groupId35.id" "polySurfaceShape16.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape16.iog.og[0].gco";
+connectAttr "groupParts19.og" "polySurfaceShape17.i";
+connectAttr "groupId36.id" "polySurfaceShape17.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape17.iog.og[0].gco";
+connectAttr "groupParts20.og" "polySurfaceShape18.i";
+connectAttr "groupId37.id" "polySurfaceShape18.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape18.iog.og[0].gco";
+connectAttr "groupParts21.og" "polySurfaceShape19.i";
+connectAttr "groupId38.id" "polySurfaceShape19.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape19.iog.og[0].gco";
+connectAttr "groupParts22.og" "polySurfaceShape20.i";
+connectAttr "groupId39.id" "polySurfaceShape20.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape20.iog.og[0].gco";
+connectAttr "groupParts23.og" "polySurfaceShape21.i";
+connectAttr "groupId40.id" "polySurfaceShape21.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape21.iog.og[0].gco";
+connectAttr "groupParts24.og" "polySurfaceShape22.i";
+connectAttr "groupId41.id" "polySurfaceShape22.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape22.iog.og[0].gco";
+connectAttr "groupParts25.og" "polySurfaceShape23.i";
+connectAttr "groupId42.id" "polySurfaceShape23.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape23.iog.og[0].gco";
+connectAttr "groupParts26.og" "polySurfaceShape24.i";
+connectAttr "groupId43.id" "polySurfaceShape24.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape24.iog.og[0].gco";
+connectAttr "groupParts27.og" "polySurfaceShape25.i";
+connectAttr "groupId44.id" "polySurfaceShape25.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape25.iog.og[0].gco";
+connectAttr "groupParts28.og" "polySurfaceShape26.i";
+connectAttr "groupId45.id" "polySurfaceShape26.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape26.iog.og[0].gco";
+connectAttr "groupParts29.og" "polySurfaceShape27.i";
+connectAttr "groupId46.id" "polySurfaceShape27.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape27.iog.og[0].gco";
+connectAttr "groupParts30.og" "polySurfaceShape28.i";
+connectAttr "groupId47.id" "polySurfaceShape28.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape28.iog.og[0].gco";
+connectAttr "groupParts31.og" "polySurfaceShape29.i";
+connectAttr "groupId48.id" "polySurfaceShape29.iog.og[0].gid";
+connectAttr "agent_why_did_he_appear_here:groupParts18.og" "agent_why_did_he_appear_here:pSphere1Shape.i"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId48.id" "agent_why_did_he_appear_here:pSphere1Shape.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "agent_why_did_he_appear_here:pSphere1Shape.iog.og[0].gco"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId49.id" "agent_why_did_he_appear_here:pSphere1Shape.iog.og[1].gid"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId50.id" "agent_why_did_he_appear_here:pSphere1Shape.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts32.og" "polySurface10Shape.i";
+connectAttr "groupId49.id" "polySurface10Shape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurface10Shape.iog.og[0].gco";
+connectAttr "groupId50.id" "polySurface10Shape.ciog.cog[0].cgid";
+connectAttr "groupParts33.og" "polySurface17Shape.i";
+connectAttr "groupId51.id" "polySurface17Shape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurface17Shape.iog.og[0].gco";
+connectAttr "groupId52.id" "polySurface17Shape.ciog.cog[0].cgid";
+connectAttr "groupParts35.og" "polySurface1Shape.i";
+connectAttr "groupId53.id" "polySurface1Shape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurface1Shape.iog.og[0].gco";
+connectAttr "groupId54.id" "polySurface1Shape.iog.og[1].gid";
+connectAttr "groupId55.id" "polySurface1Shape.ciog.cog[0].cgid";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -13342,6 +15469,137 @@ connectAttr "polyUnite2.out" "groupParts6.ig";
 connectAttr "groupId22.id" "groupParts6.gi";
 connectAttr "polyCube1.out" "polyTweak3.ip";
 connectAttr "polyTweak3.out" "transformGeometry1.ig";
+connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
+		;
+connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
+		 -na;
+connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
+connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
+connectAttr "sofa_made_by_meRNfosterParent1.msg" "sofa_made_by_meRN.fp";
+connectAttr "polyUnite3.out" "sofa_made_by_me:groupParts1.ig";
+connectAttr "sofa_made_by_me:groupId21.id" "sofa_made_by_me:groupParts1.gi";
+connectAttr "agent_why_did_he_appear_hereRNfosterParent1.msg" "agent_why_did_he_appear_hereRN.fp"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId26.id" "agent_why_did_he_appear_here:groupParts10.gi"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId28.id" "agent_why_did_he_appear_here:groupParts11.gi"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId32.id" "agent_why_did_he_appear_here:groupParts12.gi"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId36.id" "agent_why_did_he_appear_here:groupParts13.gi"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId40.id" "agent_why_did_he_appear_here:groupParts14.gi"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId42.id" "agent_why_did_he_appear_here:groupParts15.gi"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId44.id" "agent_why_did_he_appear_here:groupParts16.gi"
+		;
+connectAttr "polyUnite4.out" "agent_why_did_he_appear_here:groupParts17.ig";
+connectAttr "agent_why_did_he_appear_here:groupId48.id" "agent_why_did_he_appear_here:groupParts17.gi"
+		;
+connectAttr "agent_why_did_he_appear_here:groupParts17.og" "agent_why_did_he_appear_here:groupParts18.ig"
+		;
+connectAttr "agent_why_did_he_appear_here:groupId49.id" "agent_why_did_he_appear_here:groupParts18.gi"
+		;
+connectAttr "agent_why_did_he_appear_here:pSphere1Shape.o" "polySeparate1.ip";
+connectAttr "polySeparate1.out[0]" "groupParts7.ig";
+connectAttr "groupId24.id" "groupParts7.gi";
+connectAttr "polySeparate1.out[1]" "groupParts8.ig";
+connectAttr "groupId25.id" "groupParts8.gi";
+connectAttr "polySeparate1.out[2]" "groupParts9.ig";
+connectAttr "groupId26.id" "groupParts9.gi";
+connectAttr "polySeparate1.out[3]" "groupParts10.ig";
+connectAttr "groupId27.id" "groupParts10.gi";
+connectAttr "polySeparate1.out[4]" "groupParts11.ig";
+connectAttr "groupId28.id" "groupParts11.gi";
+connectAttr "polySeparate1.out[5]" "groupParts12.ig";
+connectAttr "groupId29.id" "groupParts12.gi";
+connectAttr "polySeparate1.out[6]" "groupParts13.ig";
+connectAttr "groupId30.id" "groupParts13.gi";
+connectAttr "polySeparate1.out[7]" "groupParts14.ig";
+connectAttr "groupId31.id" "groupParts14.gi";
+connectAttr "polySeparate1.out[8]" "groupParts15.ig";
+connectAttr "groupId32.id" "groupParts15.gi";
+connectAttr "polySeparate1.out[9]" "groupParts16.ig";
+connectAttr "groupId33.id" "groupParts16.gi";
+connectAttr "polySeparate1.out[10]" "groupParts17.ig";
+connectAttr "groupId34.id" "groupParts17.gi";
+connectAttr "polySeparate1.out[11]" "groupParts18.ig";
+connectAttr "groupId35.id" "groupParts18.gi";
+connectAttr "polySeparate1.out[12]" "groupParts19.ig";
+connectAttr "groupId36.id" "groupParts19.gi";
+connectAttr "polySeparate1.out[13]" "groupParts20.ig";
+connectAttr "groupId37.id" "groupParts20.gi";
+connectAttr "polySeparate1.out[14]" "groupParts21.ig";
+connectAttr "groupId38.id" "groupParts21.gi";
+connectAttr "polySeparate1.out[15]" "groupParts22.ig";
+connectAttr "groupId39.id" "groupParts22.gi";
+connectAttr "polySeparate1.out[16]" "groupParts23.ig";
+connectAttr "groupId40.id" "groupParts23.gi";
+connectAttr "polySeparate1.out[17]" "groupParts24.ig";
+connectAttr "groupId41.id" "groupParts24.gi";
+connectAttr "polySeparate1.out[18]" "groupParts25.ig";
+connectAttr "groupId42.id" "groupParts25.gi";
+connectAttr "polySeparate1.out[19]" "groupParts26.ig";
+connectAttr "groupId43.id" "groupParts26.gi";
+connectAttr "polySeparate1.out[20]" "groupParts27.ig";
+connectAttr "groupId44.id" "groupParts27.gi";
+connectAttr "polySeparate1.out[21]" "groupParts28.ig";
+connectAttr "groupId45.id" "groupParts28.gi";
+connectAttr "polySeparate1.out[22]" "groupParts29.ig";
+connectAttr "groupId46.id" "groupParts29.gi";
+connectAttr "polySeparate1.out[23]" "groupParts30.ig";
+connectAttr "groupId47.id" "groupParts30.gi";
+connectAttr "polySeparate1.out[24]" "groupParts31.ig";
+connectAttr "groupId48.id" "groupParts31.gi";
+connectAttr "polySurfaceShape14.o" "polyUnite5.ip[0]";
+connectAttr "polySurfaceShape15.o" "polyUnite5.ip[1]";
+connectAttr "polySurfaceShape18.o" "polyUnite5.ip[2]";
+connectAttr "polySurfaceShape16.o" "polyUnite5.ip[3]";
+connectAttr "polySurfaceShape12.o" "polyUnite5.ip[4]";
+connectAttr "polySurfaceShape17.o" "polyUnite5.ip[5]";
+connectAttr "polySurfaceShape13.o" "polyUnite5.ip[6]";
+connectAttr "polySurfaceShape14.wm" "polyUnite5.im[0]";
+connectAttr "polySurfaceShape15.wm" "polyUnite5.im[1]";
+connectAttr "polySurfaceShape18.wm" "polyUnite5.im[2]";
+connectAttr "polySurfaceShape16.wm" "polyUnite5.im[3]";
+connectAttr "polySurfaceShape12.wm" "polyUnite5.im[4]";
+connectAttr "polySurfaceShape17.wm" "polyUnite5.im[5]";
+connectAttr "polySurfaceShape13.wm" "polyUnite5.im[6]";
+connectAttr "polyUnite5.out" "groupParts32.ig";
+connectAttr "groupId49.id" "groupParts32.gi";
+connectAttr "polySurfaceShape21.o" "polyUnite6.ip[0]";
+connectAttr "polySurfaceShape22.o" "polyUnite6.ip[1]";
+connectAttr "polySurfaceShape24.o" "polyUnite6.ip[2]";
+connectAttr "polySurfaceShape25.o" "polyUnite6.ip[3]";
+connectAttr "polySurfaceShape20.o" "polyUnite6.ip[4]";
+connectAttr "polySurfaceShape23.o" "polyUnite6.ip[5]";
+connectAttr "polySurfaceShape19.o" "polyUnite6.ip[6]";
+connectAttr "polySurfaceShape21.wm" "polyUnite6.im[0]";
+connectAttr "polySurfaceShape22.wm" "polyUnite6.im[1]";
+connectAttr "polySurfaceShape24.wm" "polyUnite6.im[2]";
+connectAttr "polySurfaceShape25.wm" "polyUnite6.im[3]";
+connectAttr "polySurfaceShape20.wm" "polyUnite6.im[4]";
+connectAttr "polySurfaceShape23.wm" "polyUnite6.im[5]";
+connectAttr "polySurfaceShape19.wm" "polyUnite6.im[6]";
+connectAttr "polyUnite6.out" "groupParts33.ig";
+connectAttr "groupId51.id" "groupParts33.gi";
+connectAttr "polySurfaceShape5.o" "polyUnite7.ip[0]";
+connectAttr "polySurfaceShape10.o" "polyUnite7.ip[1]";
+connectAttr "polySurfaceShape9.o" "polyUnite7.ip[2]";
+connectAttr "polySurfaceShape8.o" "polyUnite7.ip[3]";
+connectAttr "polySurfaceShape11.o" "polyUnite7.ip[4]";
+connectAttr "polySurfaceShape29.o" "polyUnite7.ip[5]";
+connectAttr "polySurfaceShape5.wm" "polyUnite7.im[0]";
+connectAttr "polySurfaceShape10.wm" "polyUnite7.im[1]";
+connectAttr "polySurfaceShape9.wm" "polyUnite7.im[2]";
+connectAttr "polySurfaceShape8.wm" "polyUnite7.im[3]";
+connectAttr "polySurfaceShape11.wm" "polyUnite7.im[4]";
+connectAttr "polySurfaceShape29.wm" "polyUnite7.im[5]";
+connectAttr "polyUnite7.out" "groupParts34.ig";
+connectAttr "groupId53.id" "groupParts34.gi";
+connectAttr "groupParts34.og" "groupParts35.ig";
+connectAttr "groupId54.id" "groupParts35.gi";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "fl_floorShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "tbl_tableShape.iog" ":initialShadingGroup.dsm" -na;
@@ -13393,6 +15651,42 @@ connectAttr "lmp_baseShape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "|lmp_lamp|lmp_lampShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "|lmp_lamp|lmp_lampShape.ciog.cog[0]" ":initialShadingGroup.dsm" -na
 		;
+connectAttr "|sofa_made_by_me:sofabase3|sofa_made_by_me:sofabaseShape.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|sofa_made_by_me:sofabase3|sofa_made_by_me:sofabaseShape.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:pSphere1Shape.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:pSphere1Shape.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "polySurfaceShape5.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape6.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape7.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape8.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape9.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape12.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape13.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape14.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape15.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape16.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape17.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape18.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape19.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape20.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape21.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape22.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape23.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape24.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape25.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape26.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape27.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape28.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurface10Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurface10Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurface17Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurface17Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurface1Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurface1Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId9.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId10.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId11.msg" ":initialShadingGroup.gn" -na;
@@ -13406,4 +15700,70 @@ connectAttr "groupId19.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId20.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId21.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId22.msg" ":initialShadingGroup.gn" -na;
-// End of interior thingy.0001.ma
+connectAttr "sofa_made_by_me:groupId15.msg" ":initialShadingGroup.gn" -na;
+connectAttr "sofa_made_by_me:groupId16.msg" ":initialShadingGroup.gn" -na;
+connectAttr "sofa_made_by_me:groupId17.msg" ":initialShadingGroup.gn" -na;
+connectAttr "sofa_made_by_me:groupId18.msg" ":initialShadingGroup.gn" -na;
+connectAttr "sofa_made_by_me:groupId19.msg" ":initialShadingGroup.gn" -na;
+connectAttr "sofa_made_by_me:groupId20.msg" ":initialShadingGroup.gn" -na;
+connectAttr "sofa_made_by_me:groupId21.msg" ":initialShadingGroup.gn" -na;
+connectAttr "agent_why_did_he_appear_here:groupId26.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId27.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId28.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId29.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId30.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId31.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId32.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId33.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId34.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId35.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId40.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId41.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId42.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId43.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId44.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId45.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "agent_why_did_he_appear_here:groupId48.msg" ":initialShadingGroup.gn"
+		 -na;
+connectAttr "groupId24.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId25.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId26.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId27.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId28.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId31.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId32.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId33.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId34.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId35.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId36.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId37.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId38.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId39.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId40.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId41.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId42.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId43.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId44.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId45.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId46.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId47.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId49.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId51.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId53.msg" ":initialShadingGroup.gn" -na;
+// End of interior thingy.ma
