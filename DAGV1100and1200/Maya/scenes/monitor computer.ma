@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: monitor computer.ma
-//Last modified: Fri, Nov 07, 2025 09:32:08 PM
+//Last modified: Fri, Nov 07, 2025 09:33:39 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,11 +11,11 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "017906E6-4191-CC44-BE3B-A8AEE15401D6";
+fileInfo "UUID" "1E9676D6-4671-E04D-DFC1-B8B11222AF2B";
 createNode transform -s -n "persp";
 	rename -uid "5213E6A5-48EF-7236-1EFE-27959CB9D723";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.68484958065565316 2.4409219357884888 -10.431326072908419 ;
+	setAttr ".t" -type "double3" -0.046345947896834327 3.4289338212079552 -10.401712384710001 ;
 	setAttr ".r" -type "double3" -1.1999999999999253 179.19999999997714 0 ;
 	setAttr ".rpt" -type "double3" 2.5374613234928185e-16 3.9277056280667168e-18 8.2617042474923581e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -78,11 +78,11 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "pCube1";
+createNode transform -n "monitor";
 	rename -uid "CD9C92F2-46DE-6CDA-72D6-979AE67F7DF1";
 	setAttr ".t" -type "double3" 0 3.5575661809009524 0 ;
 	setAttr ".s" -type "double3" 3.5896029892773265 3.5896029892773265 1.6386643333083128 ;
-createNode mesh -n "pCubeShape1" -p "pCube1";
+createNode mesh -n "monitorShape" -p "monitor";
 	rename -uid "463041A5-4F90-DF9F-27C1-2B8C6E6679AC";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -95,11 +95,11 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr -s 4 ".pt[32:35]" -type "float3"  -1.6763806e-08 0 0 1.8626451e-08 
 		0 0 1.8626451e-08 0 0 -1.6763806e-08 0 0;
-createNode transform -n "pCube2";
+createNode transform -n "base";
 	rename -uid "2554EDC0-4C83-2856-A826-FCA5017283F8";
 	setAttr ".t" -type "double3" 0 1.5801820361554775 0.40553131587920888 ;
 	setAttr ".s" -type "double3" 2.6415801577163101 0.34216935780740693 1 ;
-createNode mesh -n "pCubeShape2" -p "pCube2";
+createNode mesh -n "baseShape" -p "base";
 	rename -uid "F3F773C5-4F65-818D-C2D4-2ABC38058F62";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -365,8 +365,8 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-connectAttr "polyExtrudeFace4.out" "pCubeShape1.i";
-connectAttr "polyExtrudeFace6.out" "pCubeShape2.i";
+connectAttr "polyExtrudeFace4.out" "monitorShape.i";
+connectAttr "polyExtrudeFace6.out" "baseShape.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -380,25 +380,25 @@ connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drive
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "polyCube1.out" "polyExtrudeFace1.ip";
-connectAttr "pCubeShape1.wm" "polyExtrudeFace1.mp";
+connectAttr "monitorShape.wm" "polyExtrudeFace1.mp";
 connectAttr "polyTweak1.out" "polyExtrudeFace2.ip";
-connectAttr "pCubeShape1.wm" "polyExtrudeFace2.mp";
+connectAttr "monitorShape.wm" "polyExtrudeFace2.mp";
 connectAttr "polyExtrudeFace1.out" "polyTweak1.ip";
 connectAttr "polyExtrudeFace2.out" "polySplit1.ip";
 connectAttr "polyTweak2.out" "polyExtrudeFace3.ip";
-connectAttr "pCubeShape1.wm" "polyExtrudeFace3.mp";
+connectAttr "monitorShape.wm" "polyExtrudeFace3.mp";
 connectAttr "polySplit1.out" "polyTweak2.ip";
 connectAttr "polyTweak3.out" "polySplit2.ip";
 connectAttr "polyExtrudeFace3.out" "polyTweak3.ip";
 connectAttr "polyTweak4.out" "polyExtrudeFace4.ip";
-connectAttr "pCubeShape1.wm" "polyExtrudeFace4.mp";
+connectAttr "monitorShape.wm" "polyExtrudeFace4.mp";
 connectAttr "polySplit2.out" "polyTweak4.ip";
 connectAttr "polyTweak5.out" "polyExtrudeFace5.ip";
-connectAttr "pCubeShape2.wm" "polyExtrudeFace5.mp";
+connectAttr "baseShape.wm" "polyExtrudeFace5.mp";
 connectAttr "polyCube2.out" "polyTweak5.ip";
 connectAttr "polyExtrudeFace5.out" "polyExtrudeFace6.ip";
-connectAttr "pCubeShape2.wm" "polyExtrudeFace6.mp";
+connectAttr "baseShape.wm" "polyExtrudeFace6.mp";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape2.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "monitorShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "baseShape.iog" ":initialShadingGroup.dsm" -na;
 // End of monitor computer.ma
